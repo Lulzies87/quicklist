@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.6;
+}
+
+body {
+  background: black;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-family: "Poppins";
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 4.21rem;
+}
+
+h2 {
+  font-size: 3.158rem;
+}
+
+h3 {
+  font-size: 2.369rem;
+}
+
+h4 {
+  font-size: 1.777rem;
+}
+
+h5 {
+  font-size: 1.333rem;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
