@@ -1,0 +1,12 @@
+$text: #ffffff;
+$background: #000000;
+$primary: #219fe4;
+$secondary: #ff8800;
+$accent: #992b00;
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: $text;
+}
