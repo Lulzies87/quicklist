@@ -9,3 +9,7 @@
 ## Shalev
 
 I am currently working on the "you don't have a project yet" page
+
+## Assaf
+
+I am currently working on User profile and Avatar button
