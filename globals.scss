@@ -1,3 +1,11 @@
+// =============== Site colors =============== //
+// Dark mode:
+// $text: #ffffff;
+// $background: #000000;
+// $primary: #219fe4;
+// $secondary: #ff8800;
+// $accent: #992b00;
+
 *,
 *::before,
 *::after {
@@ -9,13 +17,14 @@
 }
 
 html {
-	font-size: 62.5%;
+	font-size: 100%;
 	line-height: 1.6;
 }
 
 body {
 	background: black;
-	font-family: "Poppins", sans-serif;
+	font-family: 'Inter';
+	font-weight: 400;
 	font-size: 1.2rem;
 	margin: 0;
 	line-height: 1.6;
@@ -46,7 +55,15 @@ h4,
 h5,
 h6 {
 	overflow-wrap: break-word;
+	font-family: 'Poppins';
+	font-weight: 700;
 }
+
+h1 {font-size: 4.210rem;}
+h2 {font-size: 3.158rem;}
+h3 {font-size: 2.369rem;}
+h4 {font-size: 1.777rem;}
+h5 {font-size: 1.333rem;}
 
 #root,
 #__next {
