@@ -4,6 +4,7 @@
 
 1. Your name
 1. Describe the thing you are currently working on
+1. If you can, say when you think you are gonna finish what you are working on
 
 ## Shalev
 
