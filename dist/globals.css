@@ -75,3 +75,7 @@ h5 {
 #__next {
   isolation: isolate;
 }
+
+.underline {
+  text-decoration: underline;
+}
