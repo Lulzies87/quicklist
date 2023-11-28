@@ -53,8 +53,6 @@ function getRequiredString(formData, key) {
 //     }
 //     return value;
 // }
-function getLoginInfo() {
-    let username = document.getElementById("login-name");
-    let password = document.getElementById("login-password");
-    console.log(username);
-}
+let username = document.getElementById("login-name");
+let password = document.getElementById("login-password");
+console.log(username);

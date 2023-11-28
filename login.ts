@@ -76,9 +76,10 @@ function getRequiredString(formData: FormData, key: string) {
 //     return value;
 // }
 
-function getLoginInfo(){
-    let username = document.getElementById("login-name");
-    let password = document.getElementById("login-password");
+
    
+        let username = document.getElementById("login-name");
+        let password = document.getElementById("login-password");
+    
     console.log(username);
-}
+    
