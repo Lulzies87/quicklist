@@ -7,9 +7,42 @@
     <link rel="stylesheet" href="./dist/globals.css" />
     <link rel="stylesheet" href="./dist/styles.css" />
     <link rel="stylesheet" href="./dist/fonts.css" />
+    <link rel="stylesheet" href="./dist/create_project.css" />
 </head>
 <body>
-    <h1>Create a project</h1>
+    <h1 class="page-title">Quicklist</h1>
+
+    <article class="createProject">
+
+        <h2 class="createProject__header"><span class="gradient colorStyling">Create</span> a new <span class="orange colorStyling">project</span></h2>
+
+        <form class="createProject__form" name="create-new-project">
+
+            <div class="createProject__form__input">
+                <label for="projectName">Project Name:</label>
+                <input type="text" name="projectName" id="projectName" required />
+            </div>
+
+            <div class="createProject__form__input">
+                <label for="projectDeadline">Project Deadline:</label>
+                <input type="text" name="projectDeadline" id="projectDeadline" required />
+            </div>
+
+            <div class="createProject__form__input">
+                <label for="projectDifficulty">Project Difficulty:</label>
+                <input type="text" name="projectDifficulty" id="projectDifficulty" required />
+            </div>
+
+            <div class="createProject__form__input">
+                <label for="projectBudget">Project Budget:</label>
+                <input type="text" name="projectBudget" id="projectBudget" required />
+            </div>
+
+            <button class="createProject__form__button">Create</button>
+
+        </form>
+
+    </article>
 
     <script type="module" src="dist/app.js"></script>
 </body>
