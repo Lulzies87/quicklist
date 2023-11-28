@@ -1,8 +1,10 @@
 import { Project, projects, retrieveStoredData } from "./quicklist.model.js";
+import { displayProjectDifficulties } from "./quicklist.view.js";
 
 export function loadPage() {
     activateCreateNewProjectForm();
     retrieveStoredData("projects");
+    displayProjectDifficulties();
 }
 
 function activateCreateNewProjectForm() {
