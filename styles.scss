@@ -10,3 +10,21 @@ $accent: #992b00;
   margin-top: 10px;
   color: $text;
 }
+
+.no-project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  bottom: 20rem;
+}
+.no-project-alert {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+.create-first-project-title {
+  color: #219fe4;
+}
