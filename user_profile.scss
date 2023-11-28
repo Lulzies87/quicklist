@@ -29,29 +29,34 @@ $accent: #992b00;
             margin-inline: auto;
             text-align: left;
         }
+    }
+}
 
-        &__button {
-            margin-top: 1rem;
-            background-color: $background;
-            color: $secondary;
-            border: 2px solid $secondary;
-            border-radius: 10px;
-            padding: 0.5rem 1rem;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 200ms ease;
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
 
-            &:hover {
-                background-color: $secondary;
-                border-color: $text;
-                color: $text;
-            }
+    &__button {
+        margin-top: 1rem;
+        background-color: $background;
+        color: $secondary;
+        border: 2px solid $secondary;
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 200ms ease;
 
-            &:active {
-                background-color: $primary;
-                border-color: $text;
-            }
+        &:hover {
+            background-color: $secondary;
+            border-color: $text;
+            color: $text;
+        }
+
+        &:active {
+            background-color: $primary;
+            border-color: $text;
         }
     }
 }
@@ -87,10 +92,23 @@ $accent: #992b00;
 
 #passwordvisibilityButton {
     position: absolute;
-    width: 2rem;
-    left: -2.5rem;
+    background-color: transparent;
+    border: none;
+    width: 2.5rem;
+    left: calc(-2.2rem - 1.5vw);
     bottom: 50%;
+    opacity: 1;
     cursor: pointer;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+        opacity: .8;
+    }
+    
+    &:active {
+        opacity: 1;
+        scale: 1.1;
+    }
 }
 
 .avatar {
@@ -105,7 +123,6 @@ $accent: #992b00;
         display: grid;
         margin-top: 1rem;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        overflow-y: auto;
         cursor: pointer;
     }
 }

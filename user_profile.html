@@ -22,47 +22,54 @@
 
             <div class="profile-details__form__input">
                 <label for="userName">Name:</label>
-                <p id="userNameDisplay">Assaf</p>
-                <input class="--hidden" type="text" name="userName" id="userName" />
+                <p id="userNameDisplay" class="--toggle-hide">Assaf</p>
+                <input class="--hidden" type="text" name="userName" id="userName" placeholder="Assaf" />
             </div>
 
             <div class="profile-details__form__input">
                 <label for="userNickname">Nickname:</label>
-                <p id="userNicknameDisplay">Faskoman</p>
-                <input class="--hidden" type="text" name="userNickname" id="userNickname" />
+                <p id="userNicknameDisplay" class="--toggle-hide">Faskoman</p>
+                <input class="--hidden" type="text" name="userNickname" id="userNickname" placeholder="Faskoman" />
             </div>
 
             <div class="profile-details__form__input">
                 <label for="userPassword">Password:</label>
-                <p id="userPasswordDisplay">123456789 <img id="passwordvisibilityButton" src="assets/eye.svg"
-                        alt="password visibility button"></p>
+                <p id="userPasswordDisplay" class="--toggle-hide">123456789
+                    <button id="passwordvisibilityButton">
+                        <img src="assets/eye.svg" alt="password visibility button">
+                    </button>
+                </p>
                 <input class="--hidden" type="text" name="userPassword" id="userPassword" />
             </div>
 
-            <div class="profile-details__form__input">
+            <div class="profile-details__form__input --toggle-hide">
                 <label for="userLevel">Level:</label>
-                <p id="userLevelDisplay">Level Value</p>
+                <p id="userLevelDisplay">7 - The Expert Achiever</p>
             </div>
 
-            <div class="profile-details__form__input">
+            <div class="profile-details__form__input --toggle-hide">
                 <label for="userEXP">EXP:</label>
-                <p id="userEXPDisplay">EXP Value</p>
+                <p id="userEXPDisplay">550 / 1500</p>
             </div>
 
             <div class="profile-details__form__input">
                 <label for="aboutMe">About Me:</label>
-                <p id="aboutMeDisplay">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus
+                <p id="aboutMeDisplay" class="--toggle-hide">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Magni necessitatibus
                     earum fugiat sequi. Nostrum dolorum veniam, neque optio facilis modi ut quia dignissimos, dicta nam
                     sit impedit corporis architecto natus est aspernatur! Quidem deserunt tenetur aliquid dolorem
                     repellendus qui dolor?</p>
-                <input class="--hidden" type="text" name="aboutMe" id="aboutMe" />
+                <textarea class="--hidden --toggle-hide" name="aboutMe" id="aboutMe" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus
+                        earum fugiat sequi. Nostrum dolorum veniam, neque optio facilis modi ut quia dignissimos, dicta nam
+                        sit impedit corporis architecto natus est aspernatur! Quidem deserunt tenetur aliquid dolorem
+                        repellendus qui dolor?</textarea>
             </div>
 
             <div class="profile-details__form__input avatar">
                 <div id="userAvatar"><img src="https://i.pravatar.cc/" alt="avatar picture"
                         class="avatar__picture --centered-image">
                 </div>
-                <div id="avatarsCollection" class="--hidden avatar__collection">
+                <div id="avatarsCollection" class="avatar__collection --hidden --toggle-hide">
                     <img class="avatar__picture" src="https://picsum.photos/200" alt="choise for avatar">
                     <img class="avatar__picture" src="https://picsum.photos/300" alt="choise for avatar">
                     <img class="avatar__picture" src="https://picsum.photos/400" alt="choise for avatar">
@@ -73,7 +80,11 @@
                 </div>
             </div>
 
-            <button class="profile-details__form__button" id="editButton">Edit</button>
+            <div class="button-container">
+                <button class="button-container__button --toggle-hide" id="editButton">Edit</button>
+                <button class="button-container__button --hidden --toggle-hide" id="cancleButton">Cancle</button>
+                <button class="button-container__button --hidden --toggle-hide" id="saveButton">Save</button>
+            </div>
 
         </form>
 
