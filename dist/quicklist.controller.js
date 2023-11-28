@@ -1,7 +1,9 @@
 import { projects, retrieveStoredData } from "./quicklist.model.js";
+import { displayProjectDifficulties } from "./quicklist.view.js";
 export function loadPage() {
     activateCreateNewProjectForm();
     retrieveStoredData("projects");
+    displayProjectDifficulties();
 }
 function activateCreateNewProjectForm() {
     document.forms.namedItem("create-new-project")?.addEventListener("submit", (e) => {

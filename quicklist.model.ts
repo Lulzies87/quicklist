@@ -1,4 +1,4 @@
-const difficulties = ["Easy", "Medium", "Hard", "Expert"] as const;
+export const difficulties = ["Easy", "Medium", "Hard", "Expert"] as const;
 
 type Difficulty = (typeof difficulties)[number];
 
