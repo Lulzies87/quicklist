@@ -9,13 +9,10 @@
   text-align: center;
 }
 .createProject__header {
-  width: 100%;
   margin-bottom: 1rem;
 }
 .createProject__form {
-  width: 40ch;
   margin-inline: auto;
-  width: 100%;
 }
 .createProject__form__input {
   display: flex;
