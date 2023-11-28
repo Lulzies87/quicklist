@@ -7,19 +7,26 @@ const retrieveUsers = localStorage.getItem("users");
 if (retrieveUsers) {
     users = JSON.parse(retrieveUsers);
 }
-// const loginForm = document.querySelector("form[name='login']") as HTMLFormElement | null;
-// if (!loginForm) {
-//     console.error("Couldn't find login form.");
-// } 
-// else {
-//     loginForm.addEventListener("submit", function (e) {
-//         const formData = new FormData(e.target as HTMLFormElement);
-//         const username = getString(formData.get("username"), "username");
-//         const password = formData.get("password");
-//         login(formData.get("username"), formData.get("password"));
-//     }
-// )}
-const addUserForm = document.querySelector("form[name='sing-up']");
+const loginForm = document.querySelector("form[name='login']");
+if (!loginForm) {
+    console.error("Couldn't find login form.");
+}
+else {
+    loginForm.addEventListener("submit", function (e) {
+        const formData = new FormData(e.target);
+        const username = getString(formData, "username");
+        const password = getString(formData, "password");
+        if (username && password) {
+            try {
+                login(username, password);
+            }
+            catch (error) {
+                console.error("no username or password");
+            }
+        }
+    });
+}
+const addUserForm = document.querySelector("form[name='sign-up']");
 if (!addUserForm) {
     console.error("Couldn't find add user form.");
 }
