@@ -58,3 +58,39 @@
 .colorStyling.orange {
   background-color: #ff8800;
 }
+
+.--hidden {
+  display: none;
+}
+.--hidden * {
+  display: none;
+}
+
+#userPasswordDisplay {
+  position: relative;
+}
+
+#passwordvisibilityButton {
+  position: absolute;
+  width: 2rem;
+  left: -2.5rem;
+  bottom: 50%;
+  cursor: pointer;
+}
+
+.avatar__picture {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 10rem;
+}
+.avatar__collection {
+  display: grid;
+  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  overflow-y: auto;
+  cursor: pointer;
+}
+
+.--centered-image {
+  margin-inline: auto;
+}
