@@ -1,2 +1,2 @@
-import { activateCreateNewProjectForm } from "./quicklist.controller.js";
-activateCreateNewProjectForm();
+import { loadPage } from "./quicklist.controller.js";
+loadPage();

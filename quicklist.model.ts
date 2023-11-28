@@ -14,3 +14,10 @@ export type Project = {
 type Projects = Project[];
 
 export let projects: Projects = [];
+
+export function retrieveStoredData(name: string) {
+    const retrievedData = localStorage.getItem(name);
+    if (retrievedData) {
+        projects = JSON.parse(retrievedData);
+    }
+}
