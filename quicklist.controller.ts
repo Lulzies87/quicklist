@@ -1,8 +1,12 @@
-import { Project, projects } from "./quicklist.model.js";
+import { Project, projects, retrieveStoredData } from "./quicklist.model.js";
 
-export function activateCreateNewProjectForm() {
+export function loadPage() {
+    activateCreateNewProjectForm();
+    retrieveStoredData("projects");
+}
+
+function activateCreateNewProjectForm() {
   document.forms.namedItem("create-new-project")?.addEventListener("submit", (e) => {
-      e.preventDefault()
 
       const formData = new FormData(e.target as HTMLFormElement)
 
@@ -16,7 +20,7 @@ export function activateCreateNewProjectForm() {
       }
 
       projects.push(newProject);
-      console.log(projects);
+      localStorage.setItem("projects", JSON.stringify(projects));
     })
 }
 

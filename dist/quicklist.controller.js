@@ -1,7 +1,10 @@
-import { projects } from "./quicklist.model.js";
-export function activateCreateNewProjectForm() {
+import { projects, retrieveStoredData } from "./quicklist.model.js";
+export function loadPage() {
+    activateCreateNewProjectForm();
+    retrieveStoredData("projects");
+}
+function activateCreateNewProjectForm() {
     document.forms.namedItem("create-new-project")?.addEventListener("submit", (e) => {
-        e.preventDefault();
         const formData = new FormData(e.target);
         const newProject = {
             owner: "Lilach",
@@ -12,7 +15,7 @@ export function activateCreateNewProjectForm() {
             id: crypto.randomUUID(),
         };
         projects.push(newProject);
-        console.log(projects);
+        localStorage.setItem("projects", JSON.stringify(projects));
     });
 }
 function parseInput(input, key) {
