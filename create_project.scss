@@ -1,0 +1,65 @@
+$text: #ffffff;
+$background: #000000;
+$primary: #219fe4;
+$secondary: #ff8800;
+$accent: #992b00;
+
+.createProject {
+    color: $text;
+    border: 2px solid $text;
+    border-radius: 10px;
+    padding: 2rem;
+    width: min(70ch, 90vw);
+    margin: 0 1rem;
+    margin-inline: auto;
+    text-align: center;
+
+    &__header {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    &__form {
+        width: 40ch;
+        margin-inline: auto;
+        width: 100%;
+
+        &__input {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            width: 90%;
+            margin-inline: auto;
+            text-align: left;
+        }
+
+        &__button {
+            margin-top: 1rem;
+            background-color: $background;
+            color: $secondary;
+            border: 2px solid $secondary;
+            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.colorStyling {
+    border-radius: 10px;
+    padding: 0 0.5rem;
+
+    &.gradient {
+        display: inline-block;
+        background-image: linear-gradient(to right, $primary, $accent);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    &.orange {
+        background-color: $secondary;
+    }
+}

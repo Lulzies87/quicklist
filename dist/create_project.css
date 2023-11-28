@@ -1,0 +1,53 @@
+.createProject {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  width: min(70ch, 90vw);
+  margin: 0 1rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.createProject__header {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.createProject__form {
+  width: 40ch;
+  margin-inline: auto;
+  width: 100%;
+}
+.createProject__form__input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 90%;
+  margin-inline: auto;
+  text-align: left;
+}
+.createProject__form__button {
+  margin-top: 1rem;
+  background-color: #000000;
+  color: #ff8800;
+  border: 2px solid #ff8800;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.colorStyling {
+  border-radius: 10px;
+  padding: 0 0.5rem;
+}
+.colorStyling.gradient {
+  display: inline-block;
+  background-image: linear-gradient(to right, #219fe4, #992b00);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.colorStyling.orange {
+  background-color: #ff8800;
+}
