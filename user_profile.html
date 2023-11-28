@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="./dist/globals.css" />
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <link rel="stylesheet" href="./dist/fonts.css" />
+    <link rel="stylesheet" href="./dist/user_profile.css" />
+</head>
+
+<body>
+    <h1 class="page-title">QuickList</h1>
+
+    <article class="profile-details">
+
+        <h2 class="profile-details__header colorStyling gradient">Profile</h2>
+
+        <form class="profile-details__form" name="user-profile">
+
+            <div class="profile-details__form__input">
+                <label for="userName">Name:</label>
+                <p id="userNameDisplay" class="--toggle-hide">Assaf</p>
+                <input class="--hidden" type="text" name="userName" id="userName" placeholder="Assaf" />
+            </div>
+
+            <div class="profile-details__form__input">
+                <label for="userNickname">Nickname:</label>
+                <p id="userNicknameDisplay" class="--toggle-hide">Faskoman</p>
+                <input class="--hidden" type="text" name="userNickname" id="userNickname" placeholder="Faskoman" />
+            </div>
+
+            <div class="profile-details__form__input">
+                <label for="userPassword">Password:</label>
+                <p id="userPasswordDisplay" class="--toggle-hide">123456789
+                    <button id="passwordvisibilityButton">
+                        <img src="assets/eye.svg" alt="password visibility button">
+                    </button>
+                </p>
+                <input class="--hidden" type="text" name="userPassword" id="userPassword" />
+            </div>
+
+            <div class="profile-details__form__input --toggle-hide">
+                <label for="userLevel">Level:</label>
+                <p id="userLevelDisplay">7 - The Expert Achiever</p>
+            </div>
+
+            <div class="profile-details__form__input --toggle-hide">
+                <label for="userEXP">EXP:</label>
+                <p id="userEXPDisplay">550 / 1500</p>
+            </div>
+
+            <div class="profile-details__form__input">
+                <label for="aboutMe">About Me:</label>
+                <p id="aboutMeDisplay" class="--toggle-hide">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Magni necessitatibus
+                    earum fugiat sequi. Nostrum dolorum veniam, neque optio facilis modi ut quia dignissimos, dicta nam
+                    sit impedit corporis architecto natus est aspernatur! Quidem deserunt tenetur aliquid dolorem
+                    repellendus qui dolor?</p>
+                <textarea class="--hidden --toggle-hide" name="aboutMe" id="aboutMe" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus
+                        earum fugiat sequi. Nostrum dolorum veniam, neque optio facilis modi ut quia dignissimos, dicta nam
+                        sit impedit corporis architecto natus est aspernatur! Quidem deserunt tenetur aliquid dolorem
+                        repellendus qui dolor?</textarea>
+            </div>
+
+            <div class="profile-details__form__input avatar">
+                <div id="userAvatar"><img src="https://i.pravatar.cc/" alt="avatar picture"
+                        class="avatar__picture --centered-image">
+                </div>
+                <div id="avatarsCollection" class="avatar__collection --hidden --toggle-hide">
+                    <img class="avatar__picture" src="https://picsum.photos/200" alt="choise for avatar">
+                    <img class="avatar__picture" src="https://picsum.photos/300" alt="choise for avatar">
+                    <img class="avatar__picture" src="https://picsum.photos/400" alt="choise for avatar">
+                    <img class="avatar__picture" src="https://picsum.photos/500" alt="choise for avatar">
+                    <img class="avatar__picture" src="https://picsum.photos/600" alt="choise for avatar">
+                    <img class="avatar__picture" src="https://picsum.photos/700" alt="choise for avatar">
+                    <img class="avatar__picture" src="https://picsum.photos/800" alt="choise for avatar">
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="button-container__button --toggle-hide" id="editButton">Edit</button>
+                <button class="button-container__button --hidden --toggle-hide" id="cancleButton">Cancle</button>
+                <button class="button-container__button --hidden --toggle-hide" id="saveButton">Save</button>
+            </div>
+
+        </form>
+
+    </article>
+
+    <!-- <script type="module" src="dist/app.js"></script> -->
+    <script src="dist/user_profile.js"></script>
+</body>
+
+</html>

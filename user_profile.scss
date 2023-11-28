@@ -1,0 +1,132 @@
+$text: #ffffff;
+$background: #000000;
+$primary: #219fe4;
+$secondary: #ff8800;
+$accent: #992b00;
+
+.profile-details {
+    color: $text;
+    border: 2px solid $text;
+    border-radius: 10px;
+    padding: 2rem;
+    width: min(70ch, 90vw);
+    margin: 1rem;
+    margin-inline: auto;
+    text-align: center;
+
+    &__header {
+        margin-bottom: 1rem;
+    }
+
+    &__form {
+        margin-inline: auto;
+
+        &__input {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            width: 90%;
+            margin-inline: auto;
+            text-align: left;
+        }
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    &__button {
+        margin-top: 1rem;
+        background-color: $background;
+        color: $secondary;
+        border: 2px solid $secondary;
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 200ms ease;
+
+        &:hover {
+            background-color: $secondary;
+            border-color: $text;
+            color: $text;
+        }
+
+        &:active {
+            background-color: $primary;
+            border-color: $text;
+        }
+    }
+}
+
+.colorStyling {
+    border-radius: 10px;
+    padding: 0 0.5rem;
+
+    &.gradient {
+        display: inline-block;
+        background-image: linear-gradient(to right, $primary, $accent);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    &.orange {
+        background-color: $secondary;
+    }
+}
+
+.--hidden {
+    display: none;
+
+    & * {
+        display: none;
+    }
+}
+
+#userPasswordDisplay {
+    position: relative;
+}
+
+#passwordvisibilityButton {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 2.5rem;
+    left: calc(-2.2rem - 1.5vw);
+    bottom: 50%;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+        opacity: .8;
+    }
+    
+    &:active {
+        opacity: 1;
+        scale: 1.1;
+    }
+}
+
+.avatar {
+
+    &__picture {
+        border-radius: 50%;
+        aspect-ratio: 1;
+        width: 10rem;
+    }
+
+    &__collection {
+        display: grid;
+        margin-top: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        cursor: pointer;
+    }
+}
+
+.--centered-image {
+    margin-inline: auto;
+}

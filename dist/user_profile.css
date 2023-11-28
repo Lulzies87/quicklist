@@ -1,0 +1,111 @@
+.profile-details {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  width: min(70ch, 90vw);
+  margin: 1rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.profile-details__header {
+  margin-bottom: 1rem;
+}
+.profile-details__form {
+  margin-inline: auto;
+}
+.profile-details__form__input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 90%;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.button-container__button {
+  margin-top: 1rem;
+  background-color: #000000;
+  color: #ff8800;
+  border: 2px solid #ff8800;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.button-container__button:hover {
+  background-color: #ff8800;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.button-container__button:active {
+  background-color: #219fe4;
+  border-color: #ffffff;
+}
+
+.colorStyling {
+  border-radius: 10px;
+  padding: 0 0.5rem;
+}
+.colorStyling.gradient {
+  display: inline-block;
+  background-image: linear-gradient(to right, #219fe4, #992b00);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.colorStyling.orange {
+  background-color: #ff8800;
+}
+
+.--hidden {
+  display: none;
+}
+.--hidden * {
+  display: none;
+}
+
+#userPasswordDisplay {
+  position: relative;
+}
+
+#passwordvisibilityButton {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  width: 2.5rem;
+  left: calc(-2.2rem - 1.5vw);
+  bottom: 50%;
+  opacity: 1;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+#passwordvisibilityButton:hover {
+  opacity: 0.8;
+}
+#passwordvisibilityButton:active {
+  opacity: 1;
+  scale: 1.1;
+}
+
+.avatar__picture {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 10rem;
+}
+.avatar__collection {
+  display: grid;
+  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  cursor: pointer;
+}
+
+.--centered-image {
+  margin-inline: auto;
+}

@@ -1,12 +1,14 @@
+import { Level } from "./scoring.js";
+ 
 export type User = {
     Name: string;
     Nickname: string;
     Password: string;
-    Level: number;
+    Level: Level["LevelNumber"];
     XP: number;
     About: string;
     Avatar: string;
-    Projects: projects;
+    MyProjects: string;
   };
   
   export let users: User[] = [];

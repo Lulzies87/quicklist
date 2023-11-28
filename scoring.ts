@@ -52,13 +52,13 @@ export let levels: Level[] = [
     Name: "The Masterful Professional",
     LevelNumber: 8,
     Description: "Mastering the craft, exceptional performance.",
-    LevelUnlockScore: 1000,
+    LevelUnlockScore: 1500,
   },
   {
     Name: "The Leadership Prodigy",
     LevelNumber: 9,
     Description: "Displaying leadership qualities, making a significant impact.",
-    LevelUnlockScore: 2000,
+    LevelUnlockScore: 3000,
   },
   {
     Name: "The Boss",
