@@ -77,6 +77,7 @@
 
 #passwordvisibilityButton {
   position: absolute;
+  user-select: none;
   background-color: transparent;
   border: none;
   width: 2.5rem;
