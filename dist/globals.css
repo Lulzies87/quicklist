@@ -79,3 +79,11 @@ h5 {
 .underline {
   text-decoration: underline;
 }
+
+.blue-violet-text-gradient {
+  display: inline-block;
+  background-image: linear-gradient(to right, #333399, #aa00cc);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
