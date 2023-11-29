@@ -37,29 +37,29 @@ $accent: #992b00;
 .button-container {
     display: flex;
     justify-content: space-evenly;
+}
 
-    &__button {
-        margin-top: 1rem;
-        background-color: $background;
-        color: $secondary;
-        border: 2px solid $secondary;
-        border-radius: 10px;
-        padding: 0.5rem 1rem;
-        font-weight: bold;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: all 200ms ease;
+.__button {
+    margin-top: 1rem;
+    background-color: $background;
+    color: $secondary;
+    border: 2px solid $secondary;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 200ms ease;
 
-        &:hover {
-            background-color: $secondary;
-            border-color: $text;
-            color: $text;
-        }
+    &:hover {
+        background-color: $secondary;
+        border-color: $text;
+        color: $text;
+    }
 
-        &:active {
-            background-color: $primary;
-            border-color: $text;
-        }
+    &:active {
+        background-color: $primary;
+        border-color: $text;
     }
 }
 
@@ -153,6 +153,7 @@ $accent: #992b00;
 
     &__pop-up-list {
         position: absolute;
+        text-align: center;
         background: $background;
         border: 2px solid $secondary;
         color: $secondary;
@@ -160,10 +161,10 @@ $accent: #992b00;
         padding: 1rem;
         right: 1vw;
         top: calc(100% + 0.5rem);
+        width: calc(100px + 10vw);
 
         &__item {
             list-style: none;
-            padding: 0.5rem;
 
             &>a {
                 color: inherit;
@@ -172,6 +173,10 @@ $accent: #992b00;
 
         }
     }
+}
+
+.--active-accent-color:active {
+        background-color: $accent; 
 }
 
 .site-header {

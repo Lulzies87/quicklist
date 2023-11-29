@@ -29,7 +29,8 @@
   display: flex;
   justify-content: space-evenly;
 }
-.button-container__button {
+
+.__button {
   margin-top: 1rem;
   background-color: #000000;
   color: #ff8800;
@@ -41,12 +42,12 @@
   cursor: pointer;
   transition: all 200ms ease;
 }
-.button-container__button:hover {
+.__button:hover {
   background-color: #ff8800;
   border-color: #ffffff;
   color: #ffffff;
 }
-.button-container__button:active {
+.__button:active {
   background-color: #219fe4;
   border-color: #ffffff;
 }
@@ -130,6 +131,7 @@
 }
 .user-menu__pop-up-list {
   position: absolute;
+  text-align: center;
   background: #000000;
   border: 2px solid #ff8800;
   color: #ff8800;
@@ -137,14 +139,18 @@
   padding: 1rem;
   right: 1vw;
   top: calc(100% + 0.5rem);
+  width: calc(100px + 10vw);
 }
 .user-menu__pop-up-list__item {
   list-style: none;
-  padding: 0.5rem;
 }
 .user-menu__pop-up-list__item > a {
   color: inherit;
   text-decoration: none;
+}
+
+.--active-accent-color:active {
+  background-color: #992b00;
 }
 
 .site-header {

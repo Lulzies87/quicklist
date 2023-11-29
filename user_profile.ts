@@ -1,3 +1,8 @@
+document.getElementById("logoutButton")?.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.location.href = "login.html"
+});
+
 document.getElementById("editButton")?.addEventListener("click", function (event) {
     event.preventDefault();
     toggleVisibility(".profile-details__form__input input");
@@ -15,7 +20,7 @@ document.getElementById("cancleButton")?.addEventListener("click", function (eve
 
 document.getElementById("saveButton")?.addEventListener("click", function (event) {
     event.preventDefault();
-    
+
 });
 
 function showVisibility(selector: string) {
