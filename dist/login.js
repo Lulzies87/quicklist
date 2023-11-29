@@ -1,7 +1,3 @@
-// const firstName = "shai"
-// const lastName = "benari"
-// window.sessionStorage.setItem("first name" ,firstName);
-// window.localStorage.setItem("last name" , lastName);
 let users = [];
 const retrieveUsers = localStorage.getItem("users");
 if (retrieveUsers) {
@@ -47,6 +43,7 @@ else {
         });
         window.localStorage.setItem("users", JSON.stringify(users));
         window.location.href = "index.html";
+        console.log(users);
     });
 }
 function getString(formData, key) {
@@ -60,6 +57,7 @@ function getString(formData, key) {
     if (!value) {
         return undefined;
     }
+    console.log(value);
     return value;
 }
 function getRequiredString(formData, key) {
@@ -69,18 +67,6 @@ function getRequiredString(formData, key) {
     }
     return value;
 }
-// // function parseGender(value: string): gender {
-// //     if (value !== "male" && value !== "fmale" ) {
-// //         throw new Error(`Invalid gender type: ${value}`);
-// //     }
-// //     return value;
-// // }
-// function parseAge(value: string): age {
-//     if (value !== "0" && value !== "1" && value !== "2" && value !== "3"  && value !== "4") {
-//         throw new Error(`Invalid age type: ${value}`);
-//     }
-//     return value;
-// }
 function login(username, password) {
     const user = users.find((user) => user.username === username && user.password === password);
     if (!user) {
@@ -89,3 +75,17 @@ function login(username, password) {
     sessionStorage.setItem("user", user.username);
     window.location.href = "index.html";
 }
+// document.addEventListener("`DOMContentLoaded" ,() => {
+//   const signupForm = document.querySelector("#formSignin");
+//   const loginForm = document.querySelector("#formLogin");
+//   document.querySelector("#linkSignup")?.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     loginForm?.classList.add("form__hidden");
+//     signupForm?.classList.remove("form__hidden");
+//   });
+//   document.querySelector("#linkLogin")?.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     loginForm?.classList.remove("form__hidden");
+//     signupForm?.classList.add("form__hidden");
+//   }) 
+// });
