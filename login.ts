@@ -65,6 +65,7 @@ if (!addUserForm) {
 
     window.localStorage.setItem("users", JSON.stringify(users))
     window.location.href = "index.html"
+    console.log(users)
   })
 }
 
@@ -105,3 +106,22 @@ function login(username: string, password: string) {
   sessionStorage.setItem("user", user.username)
   window.location.href = "index.html"
 }
+
+// document.addEventListener("`DOMContentLoaded" ,() => {
+//   const signupForm = document.querySelector("#formSignin");
+//   const loginForm = document.querySelector("#formLogin");
+
+//   document.querySelector("#linkSignup")?.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     loginForm?.classList.add("form__hidden");
+//     signupForm?.classList.remove("form__hidden");
+//   });
+
+//   document.querySelector("#linkLogin")?.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     loginForm?.classList.remove("form__hidden");
+//     signupForm?.classList.add("form__hidden");
+//   }) 
+
+
+// });
