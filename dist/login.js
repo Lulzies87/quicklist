@@ -43,6 +43,7 @@ addUserForm?.addEventListener("submit", function (e) {
             myProjects: [],
         });
         window.localStorage.setItem("users", JSON.stringify(users));
+        sessionStorage.setItem("user", username);
         window.location.href = "index.html";
     }
 });
