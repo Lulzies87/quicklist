@@ -30,6 +30,14 @@ else {
     addUserForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const formData = new FormData(e.target);
+        const username = getRequiredString(formData, "username");
+        const email = getRequiredString(formData, "e-mail");
+        if (users.some((user) => user.username === username)) {
+            throw new Error(`Username ${username} already taken`);
+        }
+        if (!email.includes("@")) {
+            throw new Error(`Invalid email: ${email}`);
+        }
         users.push({
             username: getRequiredString(formData, "name"),
             nickname: getRequiredString(formData, "nickName"),
