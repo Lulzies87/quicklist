@@ -10,6 +10,7 @@
 }
 .profile-details__header {
   margin-bottom: 1rem;
+  font-size: calc(1.6rem + 1vw);
 }
 .profile-details__form {
   margin-inline: auto;
@@ -21,13 +22,15 @@
   width: 90%;
   margin-inline: auto;
   text-align: left;
+  font-size: calc(0.8rem + 0.4vw);
 }
 
 .button-container {
   display: flex;
   justify-content: space-evenly;
 }
-.button-container__button {
+
+.__button {
   margin-top: 1rem;
   background-color: #000000;
   color: #ff8800;
@@ -39,12 +42,12 @@
   cursor: pointer;
   transition: all 200ms ease;
 }
-.button-container__button:hover {
+.__button:hover {
   background-color: #ff8800;
   border-color: #ffffff;
   color: #ffffff;
 }
-.button-container__button:active {
+.__button:active {
   background-color: #219fe4;
   border-color: #ffffff;
 }
@@ -98,7 +101,7 @@
 .avatar__picture {
   border-radius: 50%;
   aspect-ratio: 1;
-  width: 10rem;
+  width: 8rem;
 }
 .avatar__collection {
   display: grid;
