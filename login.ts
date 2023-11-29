@@ -83,7 +83,9 @@ function getString(formData: FormData, key: string) {
   if (!value) {
     return undefined
   }
+  console.log(value);
   return value
+  
 }
 function getRequiredString(formData: FormData, key: string) {
   const value = getString(formData, key)

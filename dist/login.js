@@ -57,6 +57,7 @@ function getString(formData, key) {
     if (!value) {
         return undefined;
     }
+    console.log(value);
     return value;
 }
 function getRequiredString(formData, key) {
