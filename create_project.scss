@@ -48,10 +48,59 @@ $accent: #992b00;
                 border-color: $text;
                 color: $text;
             }
-    
+
             &:active {
                 background-color: $primary;
                 border-color: $text;
+            }
+        }
+    }
+
+    &__confirmationWindow {
+        display: none;
+        z-index: 1;
+        width: calc(180px + 26vw);
+        aspect-ratio: 1.5/1;
+        background-color: $background;
+        position: absolute;
+        top: 44.8%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid $accent;
+        border-radius: 10px;
+        padding: 0.6rem;
+
+        &__content {
+            &__paragraph {
+                font-size: calc(0.8rem + 1.2vw);
+                margin: 22% 0;
+            }
+
+            &__buttons {
+                display: flex;
+                justify-content: space-around;
+
+                &__button {
+                    background-color: $background;
+                    color: $secondary;
+                    border: 2px solid $secondary;
+                    border-radius: 10px;
+                    padding: 0.2rem 1rem;
+                    font-weight: bold;
+                    font-size: calc(0.5rem + 0.6vw);
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $secondary;
+                        border-color: $text;
+                        color: $text;
+                    }
+
+                    &:active {
+                        background-color: $primary;
+                        border-color: $text;
+                    }
+                }
             }
         }
     }
