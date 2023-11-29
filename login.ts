@@ -1,5 +1,5 @@
 
-type user = {
+type UserData = {
   username: string
   nickname: string
   password: string
@@ -10,7 +10,7 @@ type user = {
   avatar: string
   myProjects: []
 }
-type UserDataArry = user[]
+type UserDataArry = UserData[]
 let users: UserDataArry = []
 
 const retrieveUsers = localStorage.getItem("users")
@@ -93,8 +93,6 @@ function getRequiredString(formData: FormData, key: string) {
 
   return value
 }
-
-
 function login(username: string, password: string) {
   const user = users.find(
     (user) => user.username === username && user.password === password,
