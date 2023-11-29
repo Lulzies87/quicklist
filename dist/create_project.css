@@ -1,7 +1,3 @@
-.--vw {
-  font-size: calc(1rem + 3vw);
-}
-
 .createProject {
   color: #ffffff;
   border: 2px solid #ffffff;
@@ -13,8 +9,8 @@
   text-align: center;
 }
 .createProject__header {
-  scale: 0.7;
   margin-bottom: 1rem;
+  font-size: calc(1.6rem + 1vw);
 }
 .createProject__form {
   margin-inline: auto;
@@ -26,6 +22,7 @@
   width: 90%;
   margin-inline: auto;
   text-align: left;
+  font-size: calc(0.8rem + 0.4vw);
 }
 .createProject__form__button {
   margin-top: 1rem;
@@ -44,6 +41,47 @@
   color: #ffffff;
 }
 .createProject__form__button:active {
+  background-color: #219fe4;
+  border-color: #ffffff;
+}
+.createProject__confirmationWindow {
+  display: none;
+  z-index: 1;
+  width: calc(180px + 26vw);
+  aspect-ratio: 1.5/1;
+  background-color: #000000;
+  position: absolute;
+  top: 44.8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #992b00;
+  border-radius: 10px;
+  padding: 0.6rem;
+}
+.createProject__confirmationWindow__content__paragraph {
+  font-size: calc(0.8rem + 1.2vw);
+  margin: 22% 0;
+}
+.createProject__confirmationWindow__content__buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.createProject__confirmationWindow__content__buttons__button {
+  background-color: #000000;
+  color: #ff8800;
+  border: 2px solid #ff8800;
+  border-radius: 10px;
+  padding: 0.2rem 1rem;
+  font-weight: bold;
+  font-size: calc(0.5rem + 0.6vw);
+  cursor: pointer;
+}
+.createProject__confirmationWindow__content__buttons__button:hover {
+  background-color: #ff8800;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.createProject__confirmationWindow__content__buttons__button:active {
   background-color: #219fe4;
   border-color: #ffffff;
 }
