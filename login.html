@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="dist/fonts.css">
-    <link rel="stylesheet" href="dist/globals.css">
-    <link rel="stylesheet" href="dist/login.css">
-    <link rel="stylesheet" href="dist/styles.css">
-</head>
-<body>
-<!-- 
+    <link rel="stylesheet" href="dist/fonts.css" />
+    <link rel="stylesheet" href="dist/globals.css" />
+    <link rel="stylesheet" href="dist/login.css" />
+    <link rel="stylesheet" href="dist/styles.css" />
+  </head>
+  <body>
+    <!-- 
     <div class="formSignin">
     <h1 class="page-title  --vw"> User sing up</h1>
 
@@ -52,37 +52,59 @@
 </article >
 </div> -->
 
-<div class="form form__hidden" id="formLogin">
-    <h1 class="page-title  --vw ">User sign in</h1>
+    <div class="form form__hidden" id="formLogin">
+      <h1 class="page-title --vw">User sign in</h1>
 
-    <article class="login">
+      <article class="login">
+        <h2 class="login__header">
+          <span class="gradient colorStyling">Create</span> a new
+          <span class="orange colorStyling">login</span>
+        </h2>
 
-    <h2 class="login__header"><span class="gradient colorStyling">Create</span> a new <span class="orange colorStyling">login</span></h2>
-
-   <form name="login" class="login__form " id="login">
-
-    <div class="login__form__input">
-        <label for="login-name">Username</label>
-        <input type="text" id="login-name" autofocus placeholder=" Full name" name="login-name" required>
+        <form name="login" class="login__form" id="login">
+          <div class="login__form__input">
+            <label for="login-name">Username</label>
+            <input
+              type="text"
+              id="login-name"
+              autofocus
+              placeholder=" Full name"
+              name="login-name"
+              required
+            />
+          </div>
+          <div class="login__form__input">
+            <label for="nick-name">Nickname</label>
+            <input
+              type="text"
+              id="login-nick-name"
+              autofocus
+              placeholder=" nickName"
+              name="login-nickName"
+            />
+          </div>
+          <div class="login__form__input">
+            <label for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              autofocus
+              placeholder=" Password"
+              name="login-password"
+              required
+            />
+          </div>
+          <button type="submit" id="btn-login" class="login__form__button">
+            Login
+          </button>
+          <p>
+            <a href="./signup.html" id="linkSignup"
+              >Don't have an account? Sign up</a
+            >
+          </p>
+        </form>
+      </article>
     </div>
-    <div class="login__form__input">
-        <label for="nick-name">Nickname</label>
-        <input type="text" id="login-nick-name" autofocus placeholder=" nickName" name="login-nickName" >
-    </div>
-    <div class="login__form__input">
-        <label for="login-password">Password</label>
-        <input type="password" id="login-password" autofocus placeholder=" Password" name="login-password" required>
-    </div>
-    <button type="submit" id="btn-login" class="login__form__button">Login</button>
-    <p>
-        <a href="./signup.html" id="linkSignup">You dont have an account: sign out </a>
-    </p>
-
-   </form>
-
-</article>
-</div>
     <script src="dist/login.js"></script>
-</body>
+  </body>
 </html>
-  
