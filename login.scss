@@ -4,7 +4,8 @@ $primary: #219fe4;
 $secondary: #ff8800;
 $accent: #992b00;
 
-.signup ,.login{
+.signup,
+.login {
     color: $text;
     border: 2px solid $text;
     border-radius: 10px;
@@ -46,10 +47,20 @@ $accent: #992b00;
                 border-color: $text;
                 color: $text;
             }
-    
+
             &:active {
                 background-color: $primary;
                 border-color: $text;
+            }
+        }
+
+        &__link {
+            margin-top: 2rem;
+
+            &__anchor {
+                color: $text;
+                text-decoration: none;
+                font-weight: normal;
             }
         }
     }
@@ -69,81 +80,5 @@ $accent: #992b00;
 
     &.orange {
         background-color: $secondary;
-//     }
-// }
-// .form__hidden{
-//     display: none;
-// }
-// .form{
-//     display: block;
-// }
-P{
-    margin-top: 2rem;
+    }
 }
-
-// header{
-//     display: inline-block;
-//     background-color: aliceblue;
-//     width: 80%;
-//     align-items: center;
-//     margin-left: 10%;
-//     margin-right: 10%;
-//     border: 2px solid rgb(165, 165, 228, 0.5);
-//     border-radius: 15px;
-//     box-shadow: 3px 2px rgb(165, 165, 228, 0.5);
-// }
-// article{
-//     color: #ffffff;
-//     text-align: center;
-// }
-
-// h1{
-//     width: 80%;
-//     padding: .5rem 1rem;
-//     border: 2px solid black;
-//     border-radius: 15px;
-//     display: flex;
-//     justify-content: center;
-//     margin-left: auto;
-//     margin-right: auto;
-//     margin-top: 1rem;
-//     background-color: #219fe4;
-//     color:#ffffff;;
-// }
-// a{
-//     margin: 2px 10px 2px 10px;
-// }
-// .signup__form__input .login__form__input{
-//     background-color: #ff8800;
-//     margin: 2px 5px;
-//     width: 60%;
-//     margin: auto;
-//     margin-top: 1rem;
-//     border-radius: 5px;
-//     border: 2px solid #219fe4;
-// }
-// label{
-//     margin-left: 1rem;
-//     font-weight: 600;
-//     color: #ffffff;
-// }
-// button{
-//     display: inline-block;
-//     background-color:  #992b00;
-//     margin: 2px 5px;
-//     width: 20%;
-//     margin-top: 1rem;
-//     border-radius: 5px;
-//     border: 2px solid #219fe4;
-//     margin-left: 20%;
-//     margin-right: auto;
-//     font-weight: 600;
-//     color: #ffffff;
-
-// }
-// input{
-//     background-color: #ff8800;
-//     border-radius: 5px;
-//     border: 2px solid #992b00;
-//     color: #ffffff;
-// }
