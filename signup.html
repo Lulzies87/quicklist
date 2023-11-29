@@ -1,48 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="dist/fonts.css">
-    <link rel="stylesheet" href="dist/globals.css">
-    <link rel="stylesheet" href="dist/login.css">
-    <link rel="stylesheet" href="dist/styles.css">
-</head>
-<body>
-    <h1 class="page-title  --vw"> User sing up</h1>
+    <link rel="stylesheet" href="dist/fonts.css" />
+    <link rel="stylesheet" href="dist/globals.css" />
+    <link rel="stylesheet" href="dist/login.css" />
+    <link rel="stylesheet" href="dist/styles.css" />
+  </head>
+  <body>
+    <h1 class="page-title --vw">sign up</h1>
 
     <article class="signup">
-        <h2 class="signup__header"><span class="gradient colorStyling">Create</span> a new <span class="orange colorStyling">Sgin up</span></h2>
+      <h2 class="signup__header">
+        <h1>Create a new</h1>
+        <h1 class="blue-violet-text-gradient">account</h1>
+      </h2>
 
-   <form name="sign-up" class="signup__form">
+      <form name="sign-up" class="signup__form">
+        <div class="signup__form__input">
+          <label for="name">Username</label>
+          <input
+            type="text"
+            id="name"
+            autofocus
+            placeholder=" Full name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="signup__form__input">
+          <label for="nick-name">Nickname</label>
+          <input
+            type="text"
+            id="nick-name"
+            autofocus
+            placeholder=" nickName"
+            name="nickName"
+          />
+        </div>
+        <div class="signup__form__input">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            autofocus
+            placeholder=" Password"
+            name="password"
+            required
+          />
+        </div>
+        <div class="signup__form__input">
+          <label for="confirm-password">Confirm password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            autofocus
+            placeholder=" Confirm password"
+            name="confirmPassword"
+            required
+          />
+        </div>
+        <div class="signup__form__input">
+          <label for="e-mail">Email</label>
+          <input
+            type="email"
+            id="e-mail"
+            name="e-mail"
+            autofocus
+            placeholder=" E-mail"
+            required
+          />
+        </div>
 
-    <div class="signup__form__input">
-        <label for="name">Username</label>
-        <input type="text" id="name" autofocus placeholder=" Full name" name="name" required>
-    </div>
-    <div class="signup__form__input">
-        <label for="nick-name">Nickname</label>
-        <input type="text" id="nick-name" autofocus placeholder=" nickName" name="nickName" >
-    </div>
-    <div class="signup__form__input">
-        <label for="password">Password</label>
-        <input type="password" id="password" autofocus placeholder=" Password" name="password" required>
-    </div>
-    <div class="signup__form__input">
-        <label for="confirm-password">Confirm password</label>
-        <input type="password" id="confirm-password" autofocus placeholder=" Confirm password" name="confirmPassword" required>
-    </div>
-    <div class="signup__form__input">
-        <label for="e-mail">Email</label>
-        <input type="email" id="e-mail" name="e-mail" autofocus placeholder=" E-mail" required>
-    </div>
-    
-    <button type="submit" class="login__form__button">Sing up</button>
-    <button type="reset" class="login__form__button">Remove</button>
-
-   </form>
+        <button type="submit" class="login__form__button">Sing up</button>
+        <button type="reset" class="login__form__button">Remove</button>
+      </form>
+    </article>
     <script src="dist/login.js"></script>
-</body>
+  </body>
 </html>
-  
