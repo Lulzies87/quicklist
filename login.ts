@@ -1,7 +1,6 @@
-
 type UserData = {
+  fullname: string
   username: string
-  nickname: string
   password: string
   email: string
   level: number
@@ -29,11 +28,13 @@ if (!loginForm) {
 
     const username = getString(formData, "username")
     const password = getString(formData, "password")
+    console.log(username)
+    console.log(password)
 
     if (username && password) {
       try {
         login(username, password)
-    } catch (error) {
+      } catch (error) {
         console.error("no username or password")
       }
     }
@@ -49,35 +50,31 @@ if (!addUserForm) {
   addUserForm.addEventListener("submit", function (e) {
     e.preventDefault()
 
-    const formData = new FormData(e.target as HTMLFormElement);
-    const username = getRequiredString(formData, "username");
-    const email = getRequiredString(formData, "e-mail");
+    const formData = new FormData(e.target as HTMLFormElement)
+    const username = getRequiredString(formData, "username")
+    const email = getRequiredString(formData, "email")
 
-  
-      if (users.some((user) => user.username === username)) {
-          throw new Error(`Username ${username} already taken`);
-      }
-  
-      if (!email.includes("@")) {
-          throw new Error(`Invalid email: ${email}`);
-      }
-  
+    if (users.some((user) => user.username === username)) {
+      throw new Error(`Username ${username} already taken`)
+    } else if (users.some((user) => user.email === email)) {
+      throw new Error(`email ${email} already taken`)
+    } else {
+      users.push({
+        fullname: getRequiredString(formData, "fullname"),
+        username: getRequiredString(formData, "username"),
+        password: getRequiredString(formData, "password"),
+        email: getRequiredString(formData, "e-mail"),
+        level: 1,
+        xp: 0,
+        about: "",
+        avatar: "1",
+        myProjects: [],
+      })
 
-    users.push({
-      username: getRequiredString(formData, "name"),
-      nickname: getRequiredString(formData, "nickName"),
-      password: getRequiredString(formData, "password"),
-      email: getRequiredString(formData, "e-mail"),
-      level: 1,
-      xp: 0,
-      about: "",
-      avatar: "1",
-      myProjects: [],
-    })
-
-    window.localStorage.setItem("users", JSON.stringify(users))
-    window.location.href = "index.html"
-    console.log(users)
+      window.localStorage.setItem("users", JSON.stringify(users))
+      window.location.href = "index.html"
+      console.log(users)
+    }
   })
 }
 
@@ -95,9 +92,8 @@ function getString(formData: FormData, key: string) {
   if (!value) {
     return undefined
   }
-  console.log(value);
+  console.log(value)
   return value
-  
 }
 function getRequiredString(formData: FormData, key: string) {
   const value = getString(formData, key)
@@ -135,7 +131,6 @@ function login(username: string, password: string) {
 //     e.preventDefault();
 //     loginForm?.classList.remove("form__hidden");
 //     signupForm?.classList.add("form__hidden");
-//   }) 
-
+//   })
 
 // });
