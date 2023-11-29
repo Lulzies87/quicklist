@@ -1,7 +1,3 @@
-// const firstName = "shai"
-// const lastName = "benari"
-// window.sessionStorage.setItem("first name" ,firstName);
-// window.localStorage.setItem("last name" , lastName);
 let users = [];
 const retrieveUsers = localStorage.getItem("users");
 if (retrieveUsers) {
@@ -69,18 +65,6 @@ function getRequiredString(formData, key) {
     }
     return value;
 }
-// // function parseGender(value: string): gender {
-// //     if (value !== "male" && value !== "fmale" ) {
-// //         throw new Error(`Invalid gender type: ${value}`);
-// //     }
-// //     return value;
-// // }
-// function parseAge(value: string): age {
-//     if (value !== "0" && value !== "1" && value !== "2" && value !== "3"  && value !== "4") {
-//         throw new Error(`Invalid age type: ${value}`);
-//     }
-//     return value;
-// }
 function login(username, password) {
     const user = users.find((user) => user.username === username && user.password === password);
     if (!user) {
