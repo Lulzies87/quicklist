@@ -15,6 +15,7 @@ align-items: center;
   margin-top: 10px;
   color: $text;
   font-size: calc(2rem + 2vw);
+  text-decoration: none;
 }
 
 .no-project-container {
@@ -42,7 +43,7 @@ align-items: center;
   &__picture {
       border-radius: 50%;
       border: 4px double $text;
-      width: min(8vw, 75px);
+      width: min(10vw, 75px);
   }
 
   &__summary {
