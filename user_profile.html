@@ -12,11 +12,24 @@
 </head>
 
 <body>
-    <h1 class="page-title">QuickList</h1>
+    <header class="site-header">
+        <h1 class="page-title">QuickList</h1>
+        <details class="user-menu">
+            <summary class="user-menu__summary">
+                <img src="https://i.pravatar.cc/" alt="avatar picture" class="user-menu__picture"/>
+            </summary>
+            <ul class="user-menu__pop-up-list">
+                <li class="user-menu__pop-up-list__item"><a href="user_profile.html">Fasko</a></li>
+                <li class="user-menu__pop-up-list__item">lvl 7</li>
+                <li class="user-menu__pop-up-list__item">XP 550 / 1500</li>
+                <li class="user-menu__pop-up-list__item"><a href="login.html">Logout</a></li>
+            </ul>
+        </details>
+    </header>
 
     <article class="profile-details">
 
-        <h2 class="profile-details__header colorStyling gradient">Profile</h2>
+        <h2 class="profile-details__header colorStyling">Profile</h2>
 
         <form class="profile-details__form" name="user-profile">
 
