@@ -10,6 +10,7 @@
 }
 .createProject__header {
   margin-bottom: 1rem;
+  font-size: calc(1.6rem + 1vw);
 }
 .createProject__form {
   margin-inline: auto;
@@ -21,6 +22,7 @@
   width: 90%;
   margin-inline: auto;
   text-align: left;
+  font-size: calc(0.8rem + 0.4vw);
 }
 .createProject__form__button {
   margin-top: 1rem;
