@@ -1,7 +1,3 @@
-.--vw {
-  font-size: calc(1rem + 3vw);
-}
-
 .createProject {
   color: #ffffff;
   border: 2px solid #ffffff;
@@ -13,7 +9,6 @@
   text-align: center;
 }
 .createProject__header {
-  scale: 0.7;
   margin-bottom: 1rem;
 }
 .createProject__form {

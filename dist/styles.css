@@ -3,6 +3,7 @@
   justify-content: center;
   margin-top: 10px;
   color: #ffffff;
+  font-size: calc(2rem + 2vw);
 }
 
 .no-project-container {

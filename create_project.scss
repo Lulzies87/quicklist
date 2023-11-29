@@ -4,11 +4,6 @@ $primary: #219fe4;
 $secondary: #ff8800;
 $accent: #992b00;
 
-
-.--vw {
-    font-size: calc(1rem + 3vw);
-}
-
 .createProject {
     color: $text;
     border: 2px solid $text;
@@ -20,7 +15,6 @@ $accent: #992b00;
     text-align: center;
 
     &__header {
-        scale: .7;
         margin-bottom: 1rem;
     }
 
