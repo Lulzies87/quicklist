@@ -1,0 +1,41 @@
+.dashboard-main {
+  margin-inline: 4rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  color: #ffffff;
+}
+
+.your-projects__title,
+.available-projects__title,
+.working-on__title {
+  font-size: calc(1rem + 1vw);
+  margin-top: 1rem;
+}
+
+.your-projects {
+  grid-row: 1/2;
+}
+
+.available-projects {
+  grid-row: 2/3;
+}
+
+.working-on {
+  grid-row: 3/4;
+}
+
+.your-projects__container,
+.available-projects__container,
+.working-on__container {
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  height: 20vh;
+  overflow-y: auto;
+}
+
+.your-projects__container__list-item,
+.available-projects__container__list-item,
+.working-on__container__list-item {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr;
+}

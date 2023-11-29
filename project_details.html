@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="./dist/globals.css" />
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <link rel="stylesheet" href="./dist/fonts.css" />
+    <link rel="stylesheet" href="./dist/project_details.css" />
+</head>
+
+<body>
+    <header class="site-header">
+
+        <a class="page-title" href="./dashboard.html">
+            <h1 class="page-title">QuickList</h1>
+        </a>
+
+        <details class="user-menu">
+            <summary class="user-menu__summary">
+                <img src="https://i.pravatar.cc/" alt="avatar picture" class="user-menu__picture" />
+            </summary>
+
+            <ul class="user-menu__pop-up-list">
+                <li class="user-menu__pop-up-list__item"><a href="user_profile.html">Fasko</a></li>
+                <li class="user-menu__pop-up-list__item">lvl 7</li>
+                <li class="user-menu__pop-up-list__item">XP 550 / 1500</li>
+                <li class="user-menu__pop-up-list__item">
+                    <button id="logoutButton" class="__button --active-accent-color">Logout</button>
+                </li>
+            </ul>
+        </details>
+
+    </header>
+
+    <main class="projectDetails">
+
+        <h2 class="projectDetails__header">-Project Title-</h2>
+
+        <article class="projectDetails__content">
+            <div class="projectDetails__content__infoLine">Owner: 
+                <span class="projectDetails__content__infoLine__value">Lilach</span>
+            </div>
+            <div class="projectDetails__content__infoLine">Deadline: 
+                <span class="projectDetails__content__infoLine__value">24/07/2024 17:00</span>
+            </div>
+            <div class="projectDetails__content__infoLine">Difficulty: 
+                <span class="projectDetails__content__infoLine__value">Medium</span>
+            </div>
+            <div class="projectDetails__content__infoLine">Budget: 
+                <span class="projectDetails__content__infoLine__value">500 nis</span>
+            </div>
+            <div class="projectDetails__content__infoLine">Status: 
+                <span class="projectDetails__content__infoLine__value">Open</span>
+            </div>
+            <div class="projectDetails__content__infoLine">Details:
+                <div class="projectDetails__content__infoLine__value">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus excepturi, facilis vitae
+                    commodi esse, mollitia at rem est corporis quibusdam, molestiae quo expedita optio ipsam aliquam
+                    maiores! Officiis aspernatur in cum illum facilis praesentium, maxime sed culpa veniam repellat,
+                    doloribus quidem, dolorum corrupti esse dicta? Voluptatum, harum incidunt! Officia sed cumque
+                    vitae eius quasi voluptate veniam est cum saepe illo deleniti quas repellendus quos rem, ab,
+                    quia ipsum incidunt laborum animi earum veritatis architecto quisquam dignissimos fugit! Minus,
+                    quidem deserunt.</div>
+            </div>
+        </article>
+
+        <article class="projectDetails__buttons">
+            <button class="projectDetails__buttons__button">Take Project</button>
+            <button class="projectDetails__buttons__button">Submit Project</button>
+            <button class="projectDetails__buttons__button">Abandon Project</button>
+        </article>
+
+    </main>
+
+    <script type="module" src="dist/app.js"></script>
+</body>
+
+</html>
