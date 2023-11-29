@@ -9,6 +9,7 @@
   margin-top: 10px;
   color: #ffffff;
   font-size: calc(2rem + 2vw);
+  text-decoration: none;
 }
 
 .no-project-container {
@@ -37,7 +38,7 @@
 .user-menu__picture {
   border-radius: 50%;
   border: 4px double #ffffff;
-  width: min(8vw, 75px);
+  width: min(10vw, 75px);
 }
 .user-menu__summary {
   list-style: none;

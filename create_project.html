@@ -10,7 +10,22 @@
     <link rel="stylesheet" href="./dist/create_project.css" />
 </head>
 <body>
-    <h1 class="page-title">QuickList</h1>
+    <header class="site-header">
+        <a class="page-title" href="./dashboard.html">
+            <h1 class="page-title">QuickList</h1>
+        </a>
+        <details class="user-menu">
+            <summary class="user-menu__summary">
+                <img src="https://i.pravatar.cc/" alt="avatar picture" class="user-menu__picture"/>
+            </summary>
+            <ul class="user-menu__pop-up-list">
+                <li class="user-menu__pop-up-list__item"><a href="user_profile.html">Fasko</a></li>
+                <li class="user-menu__pop-up-list__item">lvl 7</li>
+                <li class="user-menu__pop-up-list__item">XP 550 / 1500</li>
+                <li class="user-menu__pop-up-list__item"><button id="logoutButton" class="__button --active-accent-color">Logout</button></li>
+            </ul>
+        </details>
+    </header>
 
     <article class="createProject">
 
