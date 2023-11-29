@@ -1,5 +1,5 @@
 
-type UserData = {
+type User = {
   username: string
   nickname: string
   password: string
@@ -10,7 +10,7 @@ type UserData = {
   avatar: string
   myProjects: []
 }
-type UserDataArry = UserData[]
+type UserDataArry = User[]
 let users: UserDataArry = []
 
 const retrieveUsers = localStorage.getItem("users")
