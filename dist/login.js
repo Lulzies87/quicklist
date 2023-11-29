@@ -2,8 +2,31 @@
 // const lastName = "benari"
 // window.sessionStorage.setItem("first name" ,firstName);
 // window.localStorage.setItem("last name" , lastName);
-const UsersData = [];
-const addUserForm = document.querySelector("form[name='sing-up']");
+let users = [];
+const retrieveUsers = localStorage.getItem("users");
+if (retrieveUsers) {
+    users = JSON.parse(retrieveUsers);
+}
+const loginForm = document.querySelector("form[name='login']");
+if (!loginForm) {
+    console.error("Couldn't find login form.");
+}
+else {
+    loginForm.addEventListener("submit", function (e) {
+        const formData = new FormData(e.target);
+        const username = getString(formData, "username");
+        const password = getString(formData, "password");
+        if (username && password) {
+            try {
+                login(username, password);
+            }
+            catch (error) {
+                console.error("no username or password");
+            }
+        }
+    });
+}
+const addUserForm = document.querySelector("form[name='sign-up']");
 if (!addUserForm) {
     console.error("Couldn't find add user form.");
 }
@@ -11,14 +34,19 @@ else {
     addUserForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const formData = new FormData(e.target);
-        UsersData.push({
+        users.push({
             username: getRequiredString(formData, "name"),
             nickname: getRequiredString(formData, "nickName"),
             password: getRequiredString(formData, "password"),
-            confirmPassword: getRequiredString(formData, "confirmPassword"),
             email: getRequiredString(formData, "e-mail"),
+            level: 1,
+            xp: 0,
+            about: "",
+            avatar: "1",
+            myProjects: [],
         });
-        console.log(UsersData);
+        window.localStorage.setItem("users", JSON.stringify(users));
+        window.location.href = "index.html";
     });
 }
 function getString(formData, key) {
@@ -53,6 +81,11 @@ function getRequiredString(formData, key) {
 //     }
 //     return value;
 // }
-let username = document.getElementById("login-name");
-let password = document.getElementById("login-password");
-console.log(username);
+function login(username, password) {
+    const user = users.find((user) => user.username === username && user.password === password);
+    if (!user) {
+        throw new Error("Invalid username or password.");
+    }
+    sessionStorage.setItem("user", user.username);
+    window.location.href = "index.html";
+}

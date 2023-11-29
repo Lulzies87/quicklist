@@ -4,63 +4,98 @@
 // window.localStorage.setItem("last name" , lastName);
 
 type UserData = {
-    username: string;
-    nickname: string;
-    password: string;
-    confirmPassword: string;
-    email: string;
-};
-type UserDataArry = UserData[];
-const UsersData: UserDataArry =[];
+  username: string
+  nickname: string
+  password: string
+  email: string
+  level: number
+  xp: number
+  about?: string
+  avatar: string
+  myProjects: []
+}
+type UserDataArry = UserData[]
+let users: UserDataArry = []
 
-const addUserForm = document.querySelector("form[name='sing-up']") as HTMLFormElement | null;
+const retrieveUsers = localStorage.getItem("users")
+if (retrieveUsers) {
+  users = JSON.parse(retrieveUsers)
+}
+
+const loginForm = document.querySelector(
+  "form[name='login']",
+) as HTMLFormElement | null
+if (!loginForm) {
+  console.error("Couldn't find login form.")
+} else {
+  loginForm.addEventListener("submit", function (e) {
+    const formData = new FormData(e.target as HTMLFormElement)
+
+    const username = getString(formData, "username")
+    const password = getString(formData, "password")
+
+    if (username && password) {
+      try {
+        login(username, password)
+    } catch (error) {
+        console.error("no username or password")
+      }
+    }
+  })
+}
+
+const addUserForm = document.querySelector(
+  "form[name='sign-up']",
+) as HTMLFormElement | null
 if (!addUserForm) {
-    console.error("Couldn't find add user form.");
-} 
-else {
-    addUserForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+  console.error("Couldn't find add user form.")
+} else {
+  addUserForm.addEventListener("submit", function (e) {
+    e.preventDefault()
 
-        const formData = new FormData(e.target as HTMLFormElement);
+    const formData = new FormData(e.target as HTMLFormElement)
 
-
-    UsersData.push({
+    users.push({
       username: getRequiredString(formData, "name"),
       nickname: getRequiredString(formData, "nickName"),
       password: getRequiredString(formData, "password"),
-      confirmPassword: getRequiredString(formData, "confirmPassword"),
       email: getRequiredString(formData, "e-mail"),
+      level: 1,
+      xp: 0,
+      about: "",
+      avatar: "1",
+      myProjects: [],
+    })
 
-     
-    });
-      console.log(UsersData);
-    });
+    window.localStorage.setItem("users", JSON.stringify(users))
+    window.location.href = "index.html"
+  })
 }
 
 function getString(formData: FormData, key: string) {
-    const value = formData.get(key);
+  const value = formData.get(key)
 
-    if (value == null) {
-        throw new Error(`Field ${key} doesn't exist!`);
-    }
+  if (value == null) {
+    throw new Error(`Field ${key} doesn't exist!`)
+  }
 
-    if (typeof value !== "string") {
-        throw new Error(`Value of field ${key} is not a string!`);
-    }
+  if (typeof value !== "string") {
+    throw new Error(`Value of field ${key} is not a string!`)
+  }
 
-    if (!value) {
-        return undefined;
-    }
-    return value;
+  if (!value) {
+    return undefined
+  }
+  return value
 }
 function getRequiredString(formData: FormData, key: string) {
-    const value = getString(formData, key);
+  const value = getString(formData, key)
 
-    if (!value) {
-        throw new Error(`Value for ${key} is required!`);
-    }
+  if (!value) {
+    throw new Error(`Value for ${key} is required!`)
+  }
 
-    return value;
+  return value
 }
 // // function parseGender(value: string): gender {
 // //     if (value !== "male" && value !== "fmale" ) {
@@ -76,10 +111,15 @@ function getRequiredString(formData: FormData, key: string) {
 //     return value;
 // }
 
+function login(username: string, password: string) {
+  const user = users.find(
+    (user) => user.username === username && user.password === password,
+  )
 
-   
-        let username = document.getElementById("login-name");
-        let password = document.getElementById("login-password");
-    
-    console.log(username);
-    
+  if (!user) {
+    throw new Error("Invalid username or password.")
+  }
+
+  sessionStorage.setItem("user", user.username)
+  window.location.href = "index.html"
+}

@@ -92,6 +92,7 @@ $accent: #992b00;
 
 #passwordvisibilityButton {
     position: absolute;
+    user-select: none;
     background-color: transparent;
     border: none;
     width: 2.5rem;
@@ -122,6 +123,7 @@ $accent: #992b00;
     &__collection {
         display: grid;
         margin-top: 1rem;
+        gap: 1ch;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         cursor: pointer;
     }
