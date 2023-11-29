@@ -12,8 +12,6 @@ else {
         const formData = new FormData(e.target);
         const username = getString(formData, "username");
         const password = getString(formData, "password");
-        console.log(username);
-        console.log(password);
         if (username && password) {
             try {
                 login(username, password);
@@ -54,7 +52,6 @@ else {
             });
             window.localStorage.setItem("users", JSON.stringify(users));
             window.location.href = "index.html";
-            console.log(users);
         }
     });
 }
@@ -69,7 +66,6 @@ function getString(formData, key) {
     if (!value) {
         return undefined;
     }
-    console.log(value);
     return value;
 }
 function getRequiredString(formData, key) {
