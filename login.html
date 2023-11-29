@@ -10,50 +10,57 @@
 </head>
 <body>
     <main>
-        <h1> User sing up</h1>
-   <form name="sing-up">
-    <div class="box-continor">
+        <h1 class="page-title">QuickList</h1>
+        <article class="signup">
+            <h2 class="signup__header"> User sing up</h2>
+   <form name="sing-up" class="signup__form">
+    <div class="signup__form__input">
         <label for="name">Username</label>
         <input type="text" id="name" autofocus placeholder=" Full name" name="name" required>
     </div>
-    <div class="box-continor">
+    <div class="signup__form__input">
         <label for="nick-name">Nickname</label>
         <input type="text" id="nick-name" autofocus placeholder=" nickName" name="nickName" >
     </div>
-    <div class="box-continor">
+    <div class="signup__form__input">
         <label for="password">Password</label>
         <input type="password" id="password" autofocus placeholder=" Password" name="password" required>
     </div>
-    <div class="box-continor">
+    <div class="signup__form__input">
         <label for="confirm-password">Confirm password</label>
         <input type="password" id="confirm-password" autofocus placeholder=" Confirm password" name="confirmPassword" required>
     </div>
-    <div class="box-continor">
+    <div class="signup__form__input">
         <label for="e-mail">Email</label>
         <input type="email" id="e-mail" name="e-mail" autofocus placeholder=" E-mail" required>
     </div>
     
-    <button type="submit">Sing up</button>
-    <button type="reset">Remove</button>
-
+    <button type="submit" class="signup__form__button">Sing up</button>
+    <button type="reset" class="signup__form__button">Remove</button>
    </form>
-   <h1>User login</h1>
-   <form name="login">
-    <div class="box-continor">
+</article >
+
+   <h1 class="page-title">QuickList</h1>
+   <article class="login">
+    <h2 class="login__header"> User login</h2>
+   <form name="login" class="login__form">
+    <div class="login__form__input">
         <label for="login-name">Username</label>
         <input type="text" id="login-name" autofocus placeholder=" Full name" name="login-name" required>
     </div>
-    <div class="box-continor">
+    <div class="login__form__input">
         <label for="nick-name">Nickname</label>
         <input type="text" id="login-nick-name" autofocus placeholder=" nickName" name="login-nickName" >
     </div>
-    <div class="box-continor">
+    <div class="login__form__input">
         <label for="login-password">Password</label>
         <input type="password" id="login-password" autofocus placeholder=" Password" name="login-password" required>
     </div>
-    <button type="submit" id="btn-login" >Login</button>
-    <button type="submit" id="btn-register">Register</button>
+    <button type="submit" id="btn-login" class="login__form__button">Login</button>
+    <button type="submit" id="btn-register" class="login__form__button">Register</button>
    </form>
+</article>
+
     <script src="dist/login.js"></script>
 </body>
 </html>
