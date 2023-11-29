@@ -1,4 +1,5 @@
-.signup, .login {
+.signup,
+.login {
   color: #ffffff;
   border: 2px solid #ffffff;
   border-radius: 10px;
@@ -8,13 +9,16 @@
   margin-inline: auto;
   text-align: center;
 }
-.signup__header, .login__header {
+.signup__header,
+.login__header {
   margin-bottom: 1rem;
 }
-.signup__form, .login__form {
+.signup__form,
+.login__form {
   margin-inline: auto;
 }
-.signup__form__input, .login__form__input {
+.signup__form__input,
+.login__form__input {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -22,7 +26,8 @@
   margin-inline: auto;
   text-align: left;
 }
-.signup__form__button, .login__form__button {
+.signup__form__button,
+.login__form__button {
   margin-top: 1rem;
   background-color: #000000;
   color: #ff8800;
@@ -33,14 +38,26 @@
   font-size: 1rem;
   cursor: pointer;
 }
-.signup__form__button:hover, .login__form__button:hover {
+.signup__form__button:hover,
+.login__form__button:hover {
   background-color: #ff8800;
   border-color: #ffffff;
   color: #ffffff;
 }
-.signup__form__button:active, .login__form__button:active {
+.signup__form__button:active,
+.login__form__button:active {
   background-color: #219fe4;
   border-color: #ffffff;
+}
+.signup__form__link,
+.login__form__link {
+  margin-top: 2rem;
+}
+.signup__form__link__anchor,
+.login__form__link__anchor {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: normal;
 }
 
 .colorStyling {
@@ -56,16 +73,4 @@
 }
 .colorStyling.orange {
   background-color: #ff8800;
-}
-
-.form__hidden {
-  display: none;
-}
-
-.form {
-  display: block;
-}
-
-P {
-  margin-top: 2rem;
 }

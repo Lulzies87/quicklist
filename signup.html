@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign up</title>
     <link rel="stylesheet" href="dist/fonts.css">
     <link rel="stylesheet" href="dist/globals.css">
     <link rel="stylesheet" href="dist/login.css">
     <link rel="stylesheet" href="dist/styles.css">
 </head>
 <body>
-    <h1 class="page-title  --vw"> User sing up</h1>
+    <header class="site-header">
+        <h1 class="page-title">QuickList</h1>
+    </header>
 
     <article class="signup">
-        <h2 class="signup__header"><span class="gradient colorStyling">Create</span> a new <span class="orange colorStyling">Sgin up</span></h2>
+        <h2 class="signup__header gradient colorStyling">Sign up</h2>
 
    <form name="sign-up" class="signup__form">
 
     <div class="signup__form__input">
-        <label for="name">Username</label>
-        <input type="text" id="name" autofocus placeholder=" Full name" name="name" required>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" autofocus placeholder="Full Name" name="name" required>
     </div>
     <div class="signup__form__input">
-        <label for="nick-name">Nickname</label>
-        <input type="text" id="nick-name" autofocus placeholder=" nickName" name="nickName" >
+        <label for="nick-name">Username</label>
+        <input type="text" id="nick-name" autofocus placeholder="Username" name="nickName" >
     </div>
     <div class="signup__form__input">
         <label for="password">Password</label>
@@ -38,8 +40,11 @@
         <input type="email" id="e-mail" name="e-mail" autofocus placeholder=" E-mail" required>
     </div>
     
-    <button type="submit" class="login__form__button">Sing up</button>
-    <button type="reset" class="login__form__button">Remove</button>
+        <button type="submit" class="login__form__button">Sign up</button>
+
+        <p class="login__form__link">
+            <a href="./login.html" class="login__form__link__anchor">Already have an account? Login </a>
+        </p>
 
    </form>
     <script src="dist/login.js"></script>

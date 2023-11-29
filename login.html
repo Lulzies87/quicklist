@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,80 +10,40 @@
     <link rel="stylesheet" href="dist/login.css">
     <link rel="stylesheet" href="dist/styles.css">
 </head>
+
 <body>
-<!-- 
-    <div class="formSignin">
-    <h1 class="page-title  --vw"> User sing up</h1>
 
-    <article class="signup">
+    <div class="form form__hidden" id="formLogin">
+        <header class="site-header">
+            <h1 class="page-title">QuickList</h1>
+        </header>
 
-        <h2 class="signup__header"><span class="gradient colorStyling">Create</span> a new <span class="orange colorStyling">Sgin up</span></h2>
+        <article class="login">
 
-   <form name="sign-up" class="signup__form" id="signup">
+            <h2 class="login__header gradient colorStyling">Login</h2>
 
-    <div class="signup__form__input">
-        <label for="name">Username</label>
-        <input type="text" id="name" autofocus placeholder=" Full name" name="name" required>
+            <form name="login" class="login__form " id="login">
+
+
+                <div class="login__form__input">
+                    <label for="nick-name">Username</label>
+                    <input type="text" id="login-nick-name" autofocus placeholder="Username" name="login-nickName">
+                </div>
+                <div class="login__form__input">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" autofocus placeholder=" Password" name="login-password"
+                        required>
+                </div>
+                <button type="submit" id="btn-login" class="login__form__button">Login</button>
+                <p class="login__form__link">
+                    <a href="./signup.html" class="login__form__link__anchor">Don't have an account? Sign-Up </a>
+                </p>
+
+            </form>
+
+        </article>
     </div>
-    <div class="signup__form__input">
-        <label for="nick-name">Nickname</label>
-        <input type="text" id="nick-name" autofocus placeholder=" nickName" name="nickName" >
-    </div>
-    <div class="signup__form__input">
-        <label for="password">Password</label>
-        <input type="password" id="password" autofocus placeholder=" Password" name="password" required>
-    </div>
-    <div class="signup__form__input">
-        <label for="confirm-password">Confirm password</label>
-        <input type="password" id="confirm-password" autofocus placeholder=" Confirm password" name="confirmPassword" required>
-    </div>
-    <div class="signup__form__input">
-        <label for="e-mail">Email</label>
-        <input type="email" id="e-mail" name="e-mail" autofocus placeholder=" E-mail" required>
-    </div>
-    
-    <button type="submit" class="login__form__button">Sing up</button>
-    <button type="reset" class="login__form__button">Remove</button>
-    <p>
-        <a href="./" id="linkLogin">Allready have an account: sign in </a>
-    </p>
-
-   </form>
-
-</article >
-</div> -->
-
-<div class="form form__hidden" id="formLogin">
-    <h1 class="page-title  --vw ">User sign in</h1>
-
-    <article class="login">
-
-    <h2 class="login__header"><span class="gradient colorStyling">Create</span> a new <span class="orange colorStyling">login</span></h2>
-
-   <form name="login" class="login__form " id="login">
-
-    <div class="login__form__input">
-        <label for="login-name">Username</label>
-        <input type="text" id="login-name" autofocus placeholder=" Full name" name="login-name" required>
-    </div>
-    <div class="login__form__input">
-        <label for="nick-name">Nickname</label>
-        <input type="text" id="login-nick-name" autofocus placeholder=" nickName" name="login-nickName" >
-    </div>
-    <div class="login__form__input">
-        <label for="login-password">Password</label>
-        <input type="password" id="login-password" autofocus placeholder=" Password" name="login-password" required>
-    </div>
-    <button type="submit" id="btn-login" class="login__form__button">Login</button>
-    <p>
-        <a href="./signup.html" id="linkSignup">You dont have an account: sign out </a>
-    </p>
-
-   </form>
-
-</article>
-</div>
     <script src="dist/login.js"></script>
 </body>
+
 </html>
-  
