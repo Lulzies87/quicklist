@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QuickList</title>
-    <link rel="stylesheet" href="./dist/globals.css" />
-    <link rel="stylesheet" href="./dist/styles.css" />
-    <link rel="stylesheet" href="./dist/fonts.css" />
-  </head>
 
-  <body>
-    <header class="site-header">
-      <h1 class="page-title">QuickList</h1>
-      <details class="user-menu">
-          <summary class="user-menu__summary">
-              <img src="https://i.pravatar.cc/" alt="avatar picture" class="user-menu__picture"/>
-          </summary>
-          <ul class="user-menu__pop-up-list">
-              <li class="user-menu__pop-up-list__item"><a href="user_profile.html">Fasko</a></li>
-              <li class="user-menu__pop-up-list__item">lvl 7</li>
-              <li class="user-menu__pop-up-list__item">XP 550 / 1500</li>
-              <li class="user-menu__pop-up-list__item"><button id="logoutButton" class="__button --active-accent-color">Logout</button></li>
-          </ul>
-      </details>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickList</title>
+  <link rel="stylesheet" href="./dist/globals.css" />
+  <link rel="stylesheet" href="./dist/styles.css" />
+  <link rel="stylesheet" href="./dist/fonts.css" />
+  <link rel="stylesheet" href="./dist/user_profile.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <h1 class="page-title">QuickList</h1>
+    <details class="user-menu">
+      <summary class="user-menu__summary">
+        <img src="https://i.pravatar.cc/" alt="avatar picture" class="user-menu__picture" />
+      </summary>
+      <ul class="user-menu__pop-up-list">
+        <li class="user-menu__pop-up-list__item"><a href="user_profile.html">Fasko</a></li>
+        <li class="user-menu__pop-up-list__item">lvl 7</li>
+        <li class="user-menu__pop-up-list__item">XP 550 / 1500</li>
+        <li class="user-menu__pop-up-list__item"><button id="logoutButton"
+            class="__button --active-accent-color">Logout</button></li>
+      </ul>
+    </details>
   </header>
 
-    <div class="no-project-container">
-      <h2 class="no-project-alert">
-        You don't have any current projects. <br /><span
-          class="underline create-first-project-title"
-          >Open one</span
-        >
-      </h2>
-    </div>
+  <div class="no-project-container">
+    <h2 class="no-project-alert">
+      You don't have any current projects. <br /><span class="underline create-first-project-title">Open one</span>
+    </h2>
+  </div>
 
-    <script type="module" src="dist/app.js"></script>
-  </body>
+  <script type="module" src="dist/app.js"></script>
+</body>
+
 </html>
