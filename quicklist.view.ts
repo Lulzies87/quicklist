@@ -26,6 +26,8 @@ function getProjectInfo(id: string) {
 export function loadProjectInfo(id: string) {
   const chosenProject = getProjectInfo(id)
 
+  document.getElementById("projectInfoHeader")!.innerText = chosenProject.title;
+
   document.getElementById(
     "projectInfoOwner",
   )!.innerText = `${chosenProject.owner}`

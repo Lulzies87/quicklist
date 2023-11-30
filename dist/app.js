@@ -3,7 +3,7 @@ import { loadProjectInfo, appendHTML } from "./quicklist.view.js";
 const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 loadPage();
 if (window.location.pathname === '/project_details.html') {
-    loadProjectInfo("f30f7f36-f9ad-47e4-b43d-c1fad7cb1c84"); // TODO: find a way to get the project id when clicking on a project in the dashboard
+    loadProjectInfo(window.location.hash.substring(1));
 }
 if (window.location.pathname === '/dashboard.html') {
     appendHTML(currentUser);
