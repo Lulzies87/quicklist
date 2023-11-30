@@ -53,24 +53,35 @@ function parseDate(date: Date) {
   return dateString.replace("T", "  ")
 }
 
-export function appendHTML() {
-  const projectsContainer = document.querySelector(
+export function appendHTML(currentUser: UserData) {
+  const yourProjectsContainer = document.querySelector(
     ".your-projects__container__list",
   )
-  if (projectsContainer) {
+  const availableProjectsContainer = document.querySelector(
+    ".available-projects__container__list",
+  )
+
+  if (yourProjectsContainer && availableProjectsContainer) {
     projects.forEach((project) => {
-      const projectHTML = generateProjectHTML(project)
-      projectsContainer.innerHTML += projectHTML
+      const projectHTML = generateProjectHTML(project, currentUser)
+
+      if (project.owner !== currentUser.username && project.status === "Open") {
+        availableProjectsContainer.innerHTML += projectHTML
+      } else {
+        yourProjectsContainer.innerHTML += projectHTML
+      }
     })
   }
 }
 
-function generateProjectHTML(project: Project): string {
+function generateProjectHTML(project: Project, currentUser: UserData): string {
   return `
-    <li class="your-projects__container__list-item">
-    <a id="${project.id}" href="project_details.html#${project.id}" class="__project-title">${project.title}</a>
-      <p class="__project-owner">${project.owner}</p>
-      <p class="__project-deadline">${parseDate(project.deadline)}</p>
-    </li>
-  `
+      <li class="your-projects__container__list-item">
+        <a id="${project.id}" href="project_details.html#${project.id}" class="__project-title">${
+    project.title
+  }</a>
+        <p class="__project-owner">${project.owner}</p>
+        <p class="__project-deadline">${parseDate(project.deadline)}</p>
+      </li>
+    `
 }
