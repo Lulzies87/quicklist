@@ -105,6 +105,19 @@ if (userAvatar) {
   userAvatar.src = currentUser.avatar
 }
 
+updateUserMenu()
+
+function updateUserMenu() {
+  const userMenuName = document.getElementById("user-menu-name")
+  const userMenuLvl = document.getElementById("user-menu-lvl")
+  const userMenuXp = document.getElementById("user-menu-xp")
+  userMenuName!.innerText = currentUser.username
+  userMenuLvl!.innerText = `lvl ${currentUser.level.number}\n${currentUser.level.Name}`
+  userMenuXp!.innerText = `XP ${currentUser.xp} / ${getNextLevelUnlockScore(
+    currentUser.level.number,
+  )}`
+}
+
 document
   .getElementById("logoutButton")
   ?.addEventListener("click", function (event) {
