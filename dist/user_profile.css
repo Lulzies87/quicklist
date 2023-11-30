@@ -114,3 +114,8 @@
 .--centered-image {
   margin-inline: auto;
 }
+
+#userNameDisplay,
+#userNicknameDisplay {
+  text-transform: capitalize;
+}

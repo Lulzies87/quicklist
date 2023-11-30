@@ -32,6 +32,9 @@ document
 });
 document.getElementById("userNameDisplay").innerText = `${currentUser.fullname}`;
 document.getElementById("userNicknameDisplay").innerText = `${currentUser.username}`;
+document.getElementById("userPasswordDisplay").innerText = `${currentUser.password}`;
+document.getElementById("userLevelDisplay").innerText = `${currentUser.level}`;
+document.getElementById("userLevelDisplay").innerText = `${currentUser.about}`;
 function showVisibility(selector) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(function (element) {

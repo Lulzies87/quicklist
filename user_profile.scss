@@ -135,6 +135,20 @@ $accent: #992b00;
     margin-inline: auto;
 }
 
+#userNameDisplay,
+#userNicknameDisplay {
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+// **************************************************************
+
 // .user-menu {
 //     position: relative;
 //     margin: 1ch 1rem 0 auto;
