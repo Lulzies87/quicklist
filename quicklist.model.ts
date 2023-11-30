@@ -12,6 +12,7 @@ export type Project = {
   budget: number
   id: string
   status: Status
+  details: string
 }
 
 type Projects = Project[];
