@@ -62,7 +62,7 @@ function parseDate(input: any, key: string) {
 }
 
 export function checkIfLoggedIn() {
-  const currentUser = sessionStorage.getItem("user")
+  const currentUser = sessionStorage.getItem("currentUser")
 
   if (!currentUser && window.location.pathname !== "/login.html") {
     window.location.href = "login.html"

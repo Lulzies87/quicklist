@@ -49,7 +49,7 @@ function parseDate(input, key) {
     return input;
 }
 export function checkIfLoggedIn() {
-    const currentUser = sessionStorage.getItem("user");
+    const currentUser = sessionStorage.getItem("currentUser");
     if (!currentUser && window.location.pathname !== "/login.html") {
         window.location.href = "login.html";
         throw new Error("User is not logged in.");

@@ -43,7 +43,7 @@ addUserForm?.addEventListener("submit", function (e) {
             myProjects: [],
         });
         window.localStorage.setItem("users", JSON.stringify(users));
-        sessionStorage.setItem("user", username);
+        sessionStorage.setItem("currentUser", username);
         window.location.href = "dashboard.html";
     }
 });
@@ -72,6 +72,6 @@ function login(username, password) {
     if (!user) {
         throw new Error("Invalid username or password.");
     }
-    sessionStorage.setItem("user", user.username);
+    sessionStorage.setItem("currentUser", JSON.stringify(user));
     window.location.href = "dashboard.html";
 }
