@@ -13,26 +13,22 @@
 
 <body>
     <header class="site-header">
-
         <a class="page-title" href="./dashboard.html">
             <h1 class="page-title">QuickList</h1>
         </a>
-
         <details class="user-menu">
             <summary class="user-menu__summary">
-                <img src="https://i.pravatar.cc/" alt="avatar picture" class="user-menu__picture" />
+                <img id=userMenuAvatar src="assets/avatar-1.png" alt="avatar picture" class="user-menu__picture" />
             </summary>
-
             <ul class="user-menu__pop-up-list">
-                <li class="user-menu__pop-up-list__item"><a href="user_profile.html">Fasko</a></li>
-                <li class="user-menu__pop-up-list__item">lvl 7</li>
-                <li class="user-menu__pop-up-list__item">XP 550 / 1500</li>
+                <li class="user-menu__pop-up-list__item"><a id="user-menu-name" href="user_profile.html">Fasko</a></li>
+                <li id="user-menu-lvl" class="user-menu__pop-up-list__item">lvl 7</li>
+                <li id="user-menu-xp" class="user-menu__pop-up-list__item">XP 550 / 1500</li>
                 <li class="user-menu__pop-up-list__item">
                     <button id="logoutButton" class="__button --active-accent-color">Logout</button>
                 </li>
             </ul>
         </details>
-
     </header>
 
     <main class="projectDetails">
@@ -40,19 +36,19 @@
         <h2 class="projectDetails__header" id="projectInfoHeader">-Project Title-</h2>
 
         <article class="projectDetails__content">
-            <div class="projectDetails__content__infoLine">Owner: 
+            <div class="projectDetails__content__infoLine">Owner:
                 <span class="projectDetails__content__infoLine__value" id="projectInfoOwner">Lilach</span>
             </div>
-            <div class="projectDetails__content__infoLine">Deadline: 
+            <div class="projectDetails__content__infoLine">Deadline:
                 <span class="projectDetails__content__infoLine__value" id="projectInfoDeadline">24/07/2024 17:00</span>
             </div>
-            <div class="projectDetails__content__infoLine">Difficulty: 
+            <div class="projectDetails__content__infoLine">Difficulty:
                 <span class="projectDetails__content__infoLine__value" id="projectInfoDifficulty">Medium</span>
             </div>
-            <div class="projectDetails__content__infoLine">Budget: 
+            <div class="projectDetails__content__infoLine">Budget:
                 <span class="projectDetails__content__infoLine__value" id="projectInfoBudget">500 nis</span>
             </div>
-            <div class="projectDetails__content__infoLine">Status: 
+            <div class="projectDetails__content__infoLine">Status:
                 <span class="projectDetails__content__infoLine__value" id="projectInfoStatus">Open</span>
             </div>
             <div class="projectDetails__content__infoLine">Details:
