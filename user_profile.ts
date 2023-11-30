@@ -1,18 +1,19 @@
 const currentUser = JSON.parse(sessionStorage.getItem("currentUser")!)
-
-type Avatar = {
-  url: string
-  id: number
+const retrieveUsers = localStorage.getItem("users")
+if (retrieveUsers) {
+  users = JSON.parse(retrieveUsers)
 }
 
-let avatars: Avatar[] = [
-  { url: "", id: 1 },
-  { url: "", id: 2 },
-  { url: "", id: 3 },
-  { url: "", id: 4 },
-  { url: "", id: 5 },
-  { url: "", id: 6 },
-  { url: "", id: 7 },
+let avatars = [
+  "assets/avatar-1.png",
+  "assets/avatar-2.png",
+  "assets/avatar-3.png",
+  "assets/avatar-4.png",
+  "assets/avatar-5.png",
+  "assets/avatar-6.png",
+  "assets/avatar-7.png",
+  "assets/avatar-8.png",
+  "assets/avatar-9.png",
 ]
 
 type Level = {
@@ -87,6 +88,22 @@ let levels: Level[] = [
 ]
 
 checkIfLoggedIn()
+generateAvatarElements()
+
+const userMenuAvatar = document.getElementById(
+  "userMenuAvatar",
+) as HTMLImageElement
+if (userMenuAvatar) {
+  userMenuAvatar.src = currentUser.avatar
+}
+
+const userAvatar = document
+  .getElementById("userAvatar")
+  ?.querySelector("img") as HTMLImageElement
+
+if (userAvatar) {
+  userAvatar.src = currentUser.avatar
+}
 
 document
   .getElementById("logoutButton")
@@ -97,12 +114,22 @@ document
   })
 
 document
-  .getElementById("editButton")
+  .getElementById("changeAvatarButton")
   ?.addEventListener("click", function (event) {
     event.preventDefault()
-    toggleVisibility(".profile-details__form__input input")
-    toggleVisibility(".--toggle-hide")
+    toggleVisibility("#avatarsCollection")
+    toggleVisibility("#changeAvatarButton")
+    toggleVisibility("#cancleButton")
+    toggleVisibility("#saveButton")
   })
+
+// document
+//   .getElementById("editButton")
+//   ?.addEventListener("click", function (event) {
+//     event.preventDefault()
+//     toggleVisibility(".profile-details__form__input input")
+//     toggleVisibility(".--toggle-hide")
+//   })
 
 document
   .getElementById("passwordvisibilityButton")
@@ -115,12 +142,6 @@ document
   ?.addEventListener("click", function (event) {
     event.preventDefault()
     window.location.reload()
-  })
-
-document
-  .getElementById("saveButton")
-  ?.addEventListener("click", function (event) {
-    event.preventDefault()
   })
 
 document.getElementById(
@@ -166,8 +187,6 @@ function toggleVisibility(selector: string) {
   })
 }
 
-//
-
 function checkIfLoggedIn() {
   if (!currentUser && window.location.pathname !== "/login.html") {
     window.location.href = "login.html"
@@ -180,4 +199,40 @@ function getNextLevelUnlockScore(currentUserLevelNumber: number) {
     (level) => level.number === currentUserLevelNumber + 1,
   )
   return nextLevel?.LevelUnlockScore
+}
+
+function generateAvatarElements() {
+  const avatarsCollection = document.getElementById("avatarsCollection")
+  avatars.forEach((avatar) => {
+    const imgElement = document.createElement("img")
+    imgElement.className = "avatar__picture"
+    imgElement.src = avatar
+    imgElement.alt = `Choice for ${avatar}`
+    imgElement.addEventListener("click", () => handleAvatarClick(avatar))
+    avatarsCollection?.appendChild(imgElement)
+  })
+}
+
+function handleAvatarClick(avatarUrl: string) {
+  const userAvatar = document.getElementById("userAvatar")?.querySelector("img")
+  if (userAvatar) {
+    userAvatar.src = avatarUrl
+    currentUser.avatar = avatarUrl
+
+    const currentUserIndex = users.findIndex(
+      (user) => user.username === currentUser.username,
+    )
+
+    users[currentUserIndex].avatar = avatarUrl
+    localStorage.setItem("users", JSON.stringify(users))
+
+    saveUserData()
+    location.reload()
+
+    userMenuAvatar!.src = avatarUrl
+  }
+}
+
+function saveUserData() {
+  sessionStorage.setItem("currentUser", JSON.stringify(currentUser))
 }

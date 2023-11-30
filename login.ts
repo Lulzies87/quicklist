@@ -137,7 +137,7 @@ addUserForm?.addEventListener("submit", function (e) {
       },
       xp: 0,
       about: "",
-      avatar: "1",
+      avatar:"assets/avatar-1.png",
       myProjects: [],
     }
 

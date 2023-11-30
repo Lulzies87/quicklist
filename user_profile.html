@@ -18,7 +18,7 @@
         </a>
         <details class="user-menu">
             <summary class="user-menu__summary">
-                <img src="assets/avatar-1.png" alt="avatar picture" class="user-menu__picture" />
+                <img id=userMenuAvatar src="assets/avatar-1.png" alt="avatar picture" class="user-menu__picture" />
             </summary>
             <ul class="user-menu__pop-up-list">
                 <li class="user-menu__pop-up-list__item"><a href="user_profile.html">Fasko</a></li>
@@ -39,19 +39,19 @@
 
             <div class="profile-details__form__input">
                 <label for="userName">Name:</label>
-                <p id="userNameDisplay" class="--toggle-hide"></p>
+                <p id="userNameDisplay"></p>
                 <input class="--hidden" type="text" name="userName" id="userName" placeholder="Assaf" />
             </div>
 
             <div class="profile-details__form__input">
                 <label for="userNickname">Username:</label>
-                <p id="userNicknameDisplay" class="--toggle-hide"></p>
+                <p id="userNicknameDisplay"></p>
                 <input class="--hidden" type="text" name="userNickname" id="userNickname" placeholder="Faskoman" />
             </div>
 
             <div class="profile-details__form__input">
                 <label for="userPassword">Password:</label>
-                <p id="userPasswordDisplay" class="--toggle-hide">123456789
+                <p id="userPasswordDisplay">123456789
                     <button id="passwordvisibilityButton">
                         <img src="assets/eye.svg" alt="password visibility button" draggable="false">
                     </button>
@@ -59,24 +59,24 @@
                 <input class="--hidden" type="text" name="userPassword" id="userPassword" />
             </div>
 
-            <div class="profile-details__form__input --toggle-hide">
+            <div class="profile-details__form__input">
                 <label for="userLevel">Level:</label>
                 <p id="userLevelDisplay"></p>
             </div>
 
-            <div class="profile-details__form__input --toggle-hide">
+            <div class="profile-details__form__input">
                 <label for="userEXP">EXP:</label>
                 <p id="userEXPDisplay"></p>
             </div>
 
             <div class="profile-details__form__input">
                 <label for="aboutMe">About Me:</label>
-                <p id="aboutMeDisplay" class="--toggle-hide">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <p id="aboutMeDisplay">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Magni necessitatibus
                     earum fugiat sequi. Nostrum dolorum veniam, neque optio facilis modi ut quia dignissimos, dicta nam
                     sit impedit corporis architecto natus est aspernatur! Quidem deserunt tenetur aliquid dolorem
                     repellendus qui dolor?</p>
-                <textarea class="--hidden --toggle-hide" name="aboutMe" id="aboutMe" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus
+                <textarea class="--hidden" name="aboutMe" id="aboutMe" rows="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus
                         earum fugiat sequi. Nostrum dolorum veniam, neque optio facilis modi ut quia dignissimos, dicta nam
                         sit impedit corporis architecto natus est aspernatur! Quidem deserunt tenetur aliquid dolorem
                         repellendus qui dolor?</textarea>
@@ -86,23 +86,14 @@
                 <div id="userAvatar"><img src="assets/avatar-1.png" alt="avatar picture"
                         class="avatar__picture --centered-image">
                 </div>
-                <div id="avatarsCollection" class="avatar__collection --hidden --toggle-hide">
-                    <img class="avatar__picture" src="assets/avatar-1.png" alt="choise for avatar">
-                    <img class="avatar__picture" src="assets/avatar-2.png" alt="choise for avatar">
-                    <img class="avatar__picture" src="assets/avatar-3.png" alt="choise for avatar">
-                    <img class="avatar__picture" src="assets/avatar-4.png" alt="choise for avatar">
-                    <img class="avatar__picture" src="assets/avatar-5.png" alt="choise for avatar">
-                    <img class="avatar__picture" src="assets/avatar-6.png" alt="choise for avatar">
-                    <img class="avatar__picture" src="assets/avatar-7.png" alt="choise for avatar">
-                    <img class="avatar__picture" src="assets/avatar-8.png" alt="choise for avatar">
-                    <img class="avatar__picture" src="assets/avatar-9.png" alt="choise for avatar">
+                <div id="avatarsCollection" class="avatar__collection --hidden">
                 </div>
             </div>
 
             <div class="button-container">
-                <button class="button-container __button --toggle-hide" id="editButton">Edit</button>
-                <button class="button-container __button --hidden --toggle-hide" id="cancleButton">Cancle</button>
-                <button class="button-container __button --hidden --toggle-hide" id="saveButton">Save</button>
+                <button class="button-container __button" id="changeAvatarButton">Change Avatar</button>
+                <button class="button-container __button --hidden" id="cancleButton">Cancle</button>
+                <!-- <button class="button-container __button --hidden" id="saveButton">Save</button> -->
             </div>
 
         </form>
