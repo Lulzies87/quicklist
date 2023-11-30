@@ -28,6 +28,7 @@ function activateCreateNewProjectForm() {
         ),
         budget: parseNumber(formData.get("projectBudget"), "Project budget"),
         id: crypto.randomUUID(),
+        status: "Open"
       }
 
       projects.push(newProject)
