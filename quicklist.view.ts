@@ -26,6 +26,8 @@ function getProjectInfo(id: string) {
 export function loadProjectInfo(id: string) {
   const chosenProject = getProjectInfo(id)
 
+  document.getElementById("projectInfoHeader")!.innerText = chosenProject.title;
+
   document.getElementById(
     "projectInfoOwner",
   )!.innerText = `${chosenProject.owner}`
@@ -66,9 +68,7 @@ export function appendHTML() {
 function generateProjectHTML(project: Project): string {
   return `
     <li class="your-projects__container__list-item">
-      <a id="${project.id}" href="#" class="__project-title">${
-    project.title
-  }</a>
+    <a id="${project.id}" href="project_details.html#${project.id}" class="__project-title">${project.title}</a>
       <p class="__project-owner">${project.owner}</p>
       <p class="__project-deadline">${parseDate(project.deadline)}</p>
     </li>
