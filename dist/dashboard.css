@@ -15,6 +15,16 @@
 .your-projects {
   grid-row: 1/2;
 }
+.your-projects__title {
+  display: inline;
+}
+.your-projects__href {
+  color: #ff8800;
+  text-decoration: none;
+  font-size: calc(0.3rem + 1vw);
+  position: relative;
+  bottom: 0.1rem;
+}
 
 .available-projects {
   grid-row: 2/3;
