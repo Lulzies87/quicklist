@@ -2,7 +2,6 @@ type UserData = {
   fullname: string
   username: string
   password: string
-  confirmPassword: string
   email: string
   level: number
   xp: number
@@ -65,7 +64,6 @@ addUserForm?.addEventListener("submit", function (e) {
       fullname: getRequiredString(formData, "fullname"),
       username: getRequiredString(formData, "username"),
       password: getRequiredString(formData, "password"),
-      confirmPassword: getRequiredString(formData, "confirmPassword"),
       email: getRequiredString(formData, "email"),
       level: 1,
       xp: 0,
@@ -76,7 +74,7 @@ addUserForm?.addEventListener("submit", function (e) {
 
     window.localStorage.setItem("users", JSON.stringify(users));
     sessionStorage.setItem("user", username);
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 })
 
