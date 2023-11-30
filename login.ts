@@ -57,7 +57,8 @@ let levels: Level[] = [
   {
     Name: "The Leadership Prodigy",
     LevelNumber: 9,
-    Description: "Displaying leadership qualities, making a significant impact.",
+    Description:
+      "Displaying leadership qualities, making a significant impact.",
     LevelUnlockScore: 3000,
   },
   {
@@ -65,7 +66,7 @@ let levels: Level[] = [
     LevelNumber: 10,
     Description: "A true leader and expert, sets the standard for excellence.",
     LevelUnlockScore: 10000,
-  }
+  },
 ]
 
 type UserData = {
@@ -123,7 +124,7 @@ addUserForm?.addEventListener("submit", function (e) {
   } else if (users.some((user) => user.email === email)) {
     throw new Error(`email ${email} already taken`)
   } else {
-    users.push({
+    const newUser: UserData = {
       fullname: getRequiredString(formData, "fullname"),
       username: getRequiredString(formData, "username"),
       password: getRequiredString(formData, "password"),
@@ -138,10 +139,12 @@ addUserForm?.addEventListener("submit", function (e) {
       about: "",
       avatar: "1",
       myProjects: [],
-    })
+    }
+
+    users.push(newUser)
 
     window.localStorage.setItem("users", JSON.stringify(users))
-    sessionStorage.setItem("currentUser", username)
+    sessionStorage.setItem("currentUser", JSON.stringify(newUser))
     window.location.href = "dashboard.html"
   }
 })

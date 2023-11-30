@@ -58,7 +58,7 @@ let levels = [
         LevelNumber: 10,
         Description: "A true leader and expert, sets the standard for excellence.",
         LevelUnlockScore: 10000,
-    }
+    },
 ];
 let users = [];
 const retrieveUsers = localStorage.getItem("users");
@@ -93,7 +93,7 @@ addUserForm?.addEventListener("submit", function (e) {
         throw new Error(`email ${email} already taken`);
     }
     else {
-        users.push({
+        const newUser = {
             fullname: getRequiredString(formData, "fullname"),
             username: getRequiredString(formData, "username"),
             password: getRequiredString(formData, "password"),
@@ -108,9 +108,10 @@ addUserForm?.addEventListener("submit", function (e) {
             about: "",
             avatar: "1",
             myProjects: [],
-        });
+        };
+        users.push(newUser);
         window.localStorage.setItem("users", JSON.stringify(users));
-        sessionStorage.setItem("currentUser", username);
+        sessionStorage.setItem("currentUser", JSON.stringify(newUser));
         window.location.href = "dashboard.html";
     }
 });

@@ -51,10 +51,10 @@ document.getElementById(
 
 document.getElementById(
   "userLevelDisplay",
-)!.innerText = `${currentUser.level}`
+)!.innerText = `${currentUser.level.LevelNumber}`
 
 document.getElementById(
-  "userLevelDisplay",
+  "aboutMeDisplay",
 )!.innerText = `${currentUser.about}`
 
 function showVisibility(selector: string) {
