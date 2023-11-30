@@ -44,7 +44,7 @@ addUserForm?.addEventListener("submit", function (e) {
         });
         window.localStorage.setItem("users", JSON.stringify(users));
         sessionStorage.setItem("user", username);
-        window.location.href = "index.html";
+        window.location.href = "dashboard.html";
     }
 });
 function getString(formData, key) {
