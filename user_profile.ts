@@ -1,3 +1,5 @@
+const currentUser = JSON.parse(sessionStorage.getItem("currentUser")!)
+
 document
   .getElementById("logoutButton")
   ?.addEventListener("click", function (event) {
@@ -32,12 +34,21 @@ document
     event.preventDefault()
   })
 
-function showVisibility(selector: string) {
-  const elements = document.querySelectorAll(selector)
-  elements.forEach(function (element) {
-    element.classList.remove("--hidden")
-  })
-}
+    document.getElementById(
+      "userNameDisplay",
+    )!.innerText = `${currentUser.fullname}`
+    
+    document.getElementById(
+      "userNicknameDisplay",
+    )!.innerText = `${currentUser.username}`
+    
+    function showVisibility(selector: string) {
+      const elements = document.querySelectorAll(selector)
+      elements.forEach(function (element) {
+        element.classList.remove("--hidden")
+      })
+    }
+
 
 function hideVisibility(selector: string) {
   const elements = document.querySelectorAll(selector)
@@ -53,9 +64,9 @@ function toggleVisibility(selector: string) {
   })
 }
 
-function checkIfLoggedIn() {
-  const currentUser = sessionStorage.getItem("user")
+//
 
+function checkIfLoggedIn() {
   if (!currentUser && window.location.pathname !== "/login.html") {
     window.location.href = "login.html"
     throw new Error("User is not logged in.")

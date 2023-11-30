@@ -1,4 +1,5 @@
 import { loadPage, checkIfLoggedIn } from "./quicklist.controller.js";
+// const currentUser = sessionStorage.getItem("currentUser")
 document
     .getElementById("logoutButton")
     ?.addEventListener("click", function (event) {

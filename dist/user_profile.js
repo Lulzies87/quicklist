@@ -1,3 +1,4 @@
+const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 document
     .getElementById("logoutButton")
     ?.addEventListener("click", function (event) {
@@ -27,6 +28,8 @@ document
     ?.addEventListener("click", function (event) {
     event.preventDefault();
 });
+document.getElementById("userNameDisplay").innerText = `${currentUser.fullname}`;
+document.getElementById("userNicknameDisplay").innerText = `${currentUser.username}`;
 function showVisibility(selector) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(function (element) {
@@ -45,8 +48,8 @@ function toggleVisibility(selector) {
         element.classList.toggle("--hidden");
     });
 }
+//
 function checkIfLoggedIn() {
-    const currentUser = sessionStorage.getItem("user");
     if (!currentUser && window.location.pathname !== "/login.html") {
         window.location.href = "login.html";
         throw new Error("User is not logged in.");
