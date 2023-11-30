@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="dist/fonts.css">
-    <link rel="stylesheet" href="dist/globals.css">
-    <link rel="stylesheet" href="dist/login.css">
-    <link rel="stylesheet" href="dist/styles.css">
-</head>
+    <link rel="stylesheet" href="dist/fonts.css" />
+    <link rel="stylesheet" href="dist/globals.css" />
+    <link rel="stylesheet" href="dist/login.css" />
+    <link rel="stylesheet" href="dist/styles.css" />
+  </head>
 
-<body>
-
+  <body>
     <div class="form form__hidden" id="formLogin">
-        <header class="site-header">
-            <h1 class="page-title">QuickList</h1>
-        </header>
+      <header class="site-header">
+        <h1 class="page-title">QuickList</h1>
+      </header>
 
-        <article class="login">
+      <article class="login">
+        <h2 class="login__header gradient colorStyling">Login</h2>
 
-            <h2 class="login__header gradient colorStyling">Login</h2>
-
-            <form name="login" class="login__form " id="login">
-
-
-                <div class="login__form__input">
-                    <label for="login-username">Username</label>
-                    <input type="text" id="login-username" autofocus placeholder="Username" name="login-username">
-                </div>
-                <div class="login__form__input">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" autofocus placeholder=" Password" name="login-password"
-                        required>
-                </div>
-                <button type="submit" id="btn-login" class="login__form__button">Login</button>
-                <p class="login__form__link">
-                    <a href="./signup.html" class="login__form__link__anchor">Don't have an account? Sign-Up </a>
-                </p>
-
-            </form>
-
-        </article>
+        <form name="login" class="login__form" id="login">
+          <div class="login__form__input">
+            <label for="login-username">Username</label>
+            <input
+              type="text"
+              id="login-username"
+              autofocus
+              placeholder="Username"
+              name="login-username"
+            />
+          </div>
+          <div class="login__form__input">
+            <label for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              autofocus
+              placeholder=" Password"
+              name="login-password"
+              required
+            />
+          </div>
+          <button type="submit" id="btn-login" class="login__form__button">
+            Login
+          </button>
+          <div class="login-form-link-bg"></div>
+          <p class="login__form__link">
+            <a href="./signup.html" class="login__form__link__anchor"
+              >Don't have an account? Sign-Up
+            </a>
+          </p>
+        </form>
+      </article>
     </div>
     <script src="dist/login.js"></script>
-</body>
-
+  </body>
 </html>

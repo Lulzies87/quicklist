@@ -58,12 +58,15 @@ $accent: #992b00;
       margin-top: 2rem;
 
       &__anchor {
-        background-image: linear-gradient(to right, #333399, #aa00cc);
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
+        color: white;
         text-decoration: none;
-        font-weight: normal;
+        font-weight: 400;
+        // background-image: linear-gradient(to right, #333399, #aa00cc);
+        // color: transparent;
+        // -webkit-background-clip: text;
+        // background-clip: text;
+        // text-decoration: none;
+        // font-weight: normal;
       }
     }
   }
@@ -84,4 +87,18 @@ $accent: #992b00;
   &.orange {
     background-color: $secondary;
   }
+}
+
+.login-form-link-bg {
+  position: absolute;
+  background: linear-gradient(to right, $accent, $secondary);
+  width: 25rem;
+  height: 3rem;
+  border-radius: 10px;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+  transition: all 500ms;
+  pointer-events: none;
 }

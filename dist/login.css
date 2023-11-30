@@ -55,12 +55,9 @@
 }
 .signup__form__link__anchor,
 .login__form__link__anchor {
-  background-image: linear-gradient(to right, #333399, #aa00cc);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: white;
   text-decoration: none;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .colorStyling {
@@ -76,4 +73,18 @@
 }
 .colorStyling.orange {
   background-color: #ff8800;
+}
+
+.login-form-link-bg {
+  position: absolute;
+  background: linear-gradient(to right, #992b00, #ff8800);
+  width: 25rem;
+  height: 3rem;
+  border-radius: 10px;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+  transition: all 500ms;
+  pointer-events: none;
 }
