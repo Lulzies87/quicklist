@@ -1,3 +1,6 @@
 import { loadPage } from "./quicklist.controller.js";
-// const currentUser = sessionStorage.getItem("currentUser")
+import { displayProjectInfo } from "./quicklist.view.js";
 loadPage();
+if (window.location.pathname === '/project_details.html') {
+    displayProjectInfo("93bdce14-34e8-4ea0-952d-f78b268d7fcb");
+}
