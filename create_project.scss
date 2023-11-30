@@ -57,7 +57,6 @@ $accent: #992b00;
     }
 
     &__confirmationWindow {
-        display: none;
         z-index: 1;
         width: calc(180px + 26vw);
         aspect-ratio: 1.5/1;
@@ -121,4 +120,8 @@ $accent: #992b00;
     &.orange {
         background-color: $secondary;
     }
+}
+
+.--hidden {
+    display: none;
 }

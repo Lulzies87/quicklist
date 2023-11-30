@@ -45,7 +45,6 @@
   border-color: #ffffff;
 }
 .createProject__confirmationWindow {
-  display: none;
   z-index: 1;
   width: calc(180px + 26vw);
   aspect-ratio: 1.5/1;
@@ -99,4 +98,8 @@
 }
 .colorStyling.orange {
   background-color: #ff8800;
+}
+
+.--hidden {
+  display: none;
 }

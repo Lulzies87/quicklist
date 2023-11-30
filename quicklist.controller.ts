@@ -13,6 +13,7 @@ function activateCreateNewProjectForm() {
   document.forms
     .namedItem("create-new-project")
     ?.addEventListener("submit", (e) => {
+      e.preventDefault()
       const formData = new FormData(e.target as HTMLFormElement)
 
       const newProject: Project = {
@@ -28,11 +29,12 @@ function activateCreateNewProjectForm() {
         ),
         budget: parseNumber(formData.get("projectBudget"), "Project budget"),
         id: crypto.randomUUID(),
-        status: "Open"
+        status: "Open",
       }
 
       projects.push(newProject)
       localStorage.setItem("projects", JSON.stringify(projects))
+      toggleConfirmationWindow()
     })
 }
 
@@ -86,5 +88,31 @@ function logout() {
     ?.addEventListener("click", function (event) {
       sessionStorage.clear()
       window.location.href = "login.html"
+    })
+}
+
+function toggleConfirmationWindow() {
+  const confirmationWindow = document.querySelector(
+    ".createProject__confirmationWindow",
+    ) as HTMLElement
+    if (confirmationWindow) {
+      confirmationWindow.classList.toggle("--hidden")
+    }
+
+
+    if (!confirmationWindow.classList.contains("--hidden")) {
+      activateConfirmationButtons();
+    }
+}
+
+function activateConfirmationButtons() {
+  document.getElementById("openAnotherProject")?.addEventListener("click", (e) => {
+      document.querySelector(".createProject__confirmationWindow")?.classList.add("--hidden")
+      location.reload()
+    })
+    
+    document.getElementById("watchMyProjects")?.addEventListener("click", (e) => {
+      document.querySelector(".createProject__confirmationWindow")?.classList.add("--hidden")
+      location.href = "dashboard.html"
     })
 }
