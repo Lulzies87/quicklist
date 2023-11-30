@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="./dist/fonts.css" />
     <link rel="stylesheet" href="./dist/create_project.css" />
 </head>
+
 <body>
     <header class="site-header">
         <a class="page-title" href="./dashboard.html">
@@ -16,20 +18,23 @@
         </a>
         <details class="user-menu">
             <summary class="user-menu__summary">
-                <img src="https://i.pravatar.cc/" alt="avatar picture" class="user-menu__picture"/>
+                <img id=userMenuAvatar src="assets/avatar-1.png" alt="avatar picture" class="user-menu__picture" />
             </summary>
             <ul class="user-menu__pop-up-list">
-                <li class="user-menu__pop-up-list__item"><a href="user_profile.html">Fasko</a></li>
-                <li class="user-menu__pop-up-list__item">lvl 7</li>
-                <li class="user-menu__pop-up-list__item">XP 550 / 1500</li>
-                <li class="user-menu__pop-up-list__item"><button id="logoutButton" class="__button --active-accent-color">Logout</button></li>
+                <li class="user-menu__pop-up-list__item"><a id="user-menu-name" href="user_profile.html">Fasko</a></li>
+                <li id="user-menu-lvl" class="user-menu__pop-up-list__item">lvl 7</li>
+                <li id="user-menu-xp" class="user-menu__pop-up-list__item">XP 550 / 1500</li>
+                <li class="user-menu__pop-up-list__item">
+                    <button id="logoutButton" class="__button --active-accent-color">Logout</button>
+                </li>
             </ul>
         </details>
     </header>
 
     <article class="createProject">
 
-        <h2 class="createProject__header"><span class="gradient colorStyling">Create</span> a new <span class="orange colorStyling">project</span></h2>
+        <h2 class="createProject__header"><span class="gradient colorStyling">Create</span> a new <span
+                class="orange colorStyling">project</span></h2>
 
         <form class="createProject__form" name="create-new-project">
 
@@ -67,8 +72,10 @@
             <div class="createProject__confirmationWindow__content">
                 <p class="createProject__confirmationWindow__content__paragraph">Project created!</p>
                 <div class="createProject__confirmationWindow__content__buttons">
-                    <button class="createProject__confirmationWindow__content__buttons__button" id="openAnotherProject">Open another project</button>
-                    <button class="createProject__confirmationWindow__content__buttons__button" id="watchMyProjects">Watch my projects</button>
+                    <button class="createProject__confirmationWindow__content__buttons__button"
+                        id="openAnotherProject">Open another project</button>
+                    <button class="createProject__confirmationWindow__content__buttons__button"
+                        id="watchMyProjects">Watch my projects</button>
                 </div>
             </div>
 
@@ -78,4 +85,5 @@
 
     <script type="module" src="dist/app.js"></script>
 </body>
+
 </html>
