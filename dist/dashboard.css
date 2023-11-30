@@ -32,6 +32,11 @@
   height: 20vh;
   overflow-y: auto;
 }
+.your-projects__container__list,
+.available-projects__container__list,
+.working-on__container__list {
+  padding-inline-start: 1vw;
+}
 .your-projects__container__list > :nth-child(1),
 .available-projects__container__list > :nth-child(1),
 .working-on__container__list > :nth-child(1) {
@@ -85,4 +90,5 @@
   color: inherit;
   text-decoration: none;
   font-weight: bold;
+  font-size: calc(.5rem + 1vw);
 }
