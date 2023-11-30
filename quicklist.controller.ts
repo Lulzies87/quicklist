@@ -16,8 +16,10 @@ function activateCreateNewProjectForm() {
       e.preventDefault()
       const formData = new FormData(e.target as HTMLFormElement)
 
+      const currentUser = JSON.parse(sessionStorage.getItem("currentUser")!);
+
       const newProject: Project = {
-        owner: "Lilach",
+        owner: getUsername(currentUser),
         title: parseInput(formData.get("projectTitle"), "Project title"),
         deadline: parseDate(
           formData.get("projectDeadline"),
@@ -129,4 +131,13 @@ function activateConfirmationButtons() {
       ?.classList.add("--hidden")
     location.href = "dashboard.html"
   })
+}
+
+function getUsername(user: UserData) {
+
+  if(!user) {
+    throw new Error(`User doesn't exist`);
+  }
+
+  return user.username;
 }

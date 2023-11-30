@@ -21,7 +21,7 @@ function getProjectInfo(id: string) {
     return chosenProject;
 }
 
-export function displayProjectInfo(id: string) {
+export function loadProjectInfo(id: string) {
     const chosenProject = getProjectInfo(id);
 
     document.getElementById("projectInfoOwner")!.innerText = `${chosenProject.owner}`
@@ -29,7 +29,9 @@ export function displayProjectInfo(id: string) {
     document.getElementById("projectInfoDifficulty")!.innerText = `${chosenProject.difficulty}`
     document.getElementById("projectInfoBudget")!.innerText = `${chosenProject.budget}`
     document.getElementById("projectInfoStatus")!.innerText = `${chosenProject.status}`
-    document.getElementById("projectInfoDetails")!.innerText = `${chosenProject.owner}`
+    document.getElementById("projectInfoDetails")!.innerText = `${chosenProject.details}`
+
+
 }
 
 function parseDate(date: Date) {

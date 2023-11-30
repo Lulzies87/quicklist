@@ -15,14 +15,14 @@ function getProjectInfo(id) {
     }
     return chosenProject;
 }
-export function displayProjectInfo(id) {
+export function loadProjectInfo(id) {
     const chosenProject = getProjectInfo(id);
     document.getElementById("projectInfoOwner").innerText = `${chosenProject.owner}`;
     document.getElementById("projectInfoDeadline").innerText = `${parseDate(chosenProject.deadline)}`;
     document.getElementById("projectInfoDifficulty").innerText = `${chosenProject.difficulty}`;
     document.getElementById("projectInfoBudget").innerText = `${chosenProject.budget}`;
     document.getElementById("projectInfoStatus").innerText = `${chosenProject.status}`;
-    document.getElementById("projectInfoDetails").innerText = `${chosenProject.owner}`;
+    document.getElementById("projectInfoDetails").innerText = `${chosenProject.details}`;
 }
 function parseDate(date) {
     const dateString = date.toString();
