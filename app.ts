@@ -12,5 +12,5 @@ document
     window.location.href = "login.html"
   })
 
-// checkIfLoggedIn()
+checkIfLoggedIn()
 loadPage()
