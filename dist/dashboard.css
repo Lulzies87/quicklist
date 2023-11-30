@@ -32,10 +32,57 @@
   height: 20vh;
   overflow-y: auto;
 }
-
+.your-projects__container__list > :nth-child(1),
+.available-projects__container__list > :nth-child(1),
+.working-on__container__list > :nth-child(1) {
+  margin-top: 1.5rem;
+}
+.your-projects__container__list > :nth-child(1) .__project-title::before,
+.your-projects__container__list > :nth-child(1) .__project-owner::before,
+.your-projects__container__list > :nth-child(1) .__project-deadline::before,
+.available-projects__container__list > :nth-child(1) .__project-title::before,
+.available-projects__container__list > :nth-child(1) .__project-owner::before,
+.available-projects__container__list > :nth-child(1) .__project-deadline::before,
+.working-on__container__list > :nth-child(1) .__project-title::before,
+.working-on__container__list > :nth-child(1) .__project-owner::before,
+.working-on__container__list > :nth-child(1) .__project-deadline::before {
+  position: absolute;
+  color: #ff8800;
+  font-size: clamp(7px, 1.5vw, 1rem);
+  transform: translate(0, -90%);
+}
+.your-projects__container__list > :nth-child(1) .__project-title::before,
+.available-projects__container__list > :nth-child(1) .__project-title::before,
+.working-on__container__list > :nth-child(1) .__project-title::before {
+  content: "Project title";
+}
+.your-projects__container__list > :nth-child(1) .__project-owner::before,
+.available-projects__container__list > :nth-child(1) .__project-owner::before,
+.working-on__container__list > :nth-child(1) .__project-owner::before {
+  content: "by";
+}
+.your-projects__container__list > :nth-child(1) .__project-deadline::before,
+.available-projects__container__list > :nth-child(1) .__project-deadline::before,
+.working-on__container__list > :nth-child(1) .__project-deadline::before {
+  content: "deadline";
+}
+.your-projects__container__list > :nth-child(even),
+.available-projects__container__list > :nth-child(even),
+.working-on__container__list > :nth-child(even) {
+  color: #219fe4;
+}
 .your-projects__container__list-item,
 .available-projects__container__list-item,
 .working-on__container__list-item {
   display: grid;
   grid-template-columns: 3fr 2fr 2fr;
+}
+
+.__project-title,
+.__project-owner,
+.__project-deadline {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
 }

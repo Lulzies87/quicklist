@@ -73,5 +73,5 @@ function login(username, password) {
         throw new Error("Invalid username or password.");
     }
     sessionStorage.setItem("user", user.username);
-    window.location.href = "index.html";
+    window.location.href = "dashboard.html";
 }
