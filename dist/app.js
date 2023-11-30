@@ -1,4 +1,4 @@
-import { loadPage } from "./quicklist.controller.js";
+import { loadPage, checkIfLoggedIn } from "./quicklist.controller.js";
 // import { users } from "./login.js";
 // const retrieveUsers = JSON.parse(localStorage.getItem("users")!);
 // users = sessionStorage.getItem(retrieveUsers);
@@ -9,5 +9,5 @@ document
     sessionStorage.clear();
     window.location.href = "login.html";
 });
-// checkIfLoggedIn()
+checkIfLoggedIn();
 loadPage();
