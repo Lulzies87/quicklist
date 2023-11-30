@@ -1,8 +1,11 @@
 const currentUser = JSON.parse(sessionStorage.getItem("currentUser")!)
 
+checkIfLoggedIn()
+
 document
   .getElementById("logoutButton")
   ?.addEventListener("click", function (event) {
+    event.preventDefault()
     sessionStorage.clear()
     window.location.href = "login.html"
   })
@@ -34,21 +37,20 @@ document
     event.preventDefault()
   })
 
-    document.getElementById(
-      "userNameDisplay",
-    )!.innerText = `${currentUser.fullname}`
-    
-    document.getElementById(
-      "userNicknameDisplay",
-    )!.innerText = `${currentUser.username}`
-    
-    function showVisibility(selector: string) {
-      const elements = document.querySelectorAll(selector)
-      elements.forEach(function (element) {
-        element.classList.remove("--hidden")
-      })
-    }
+document.getElementById(
+  "userNameDisplay",
+)!.innerText = `${currentUser.fullname}`
 
+document.getElementById(
+  "userNicknameDisplay",
+)!.innerText = `${currentUser.username}`
+
+function showVisibility(selector: string) {
+  const elements = document.querySelectorAll(selector)
+  elements.forEach(function (element) {
+    element.classList.remove("--hidden")
+  })
+}
 
 function hideVisibility(selector: string) {
   const elements = document.querySelectorAll(selector)
@@ -72,5 +74,3 @@ function checkIfLoggedIn() {
     throw new Error("User is not logged in.")
   }
 }
-
-checkIfLoggedIn()

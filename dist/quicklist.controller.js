@@ -1,12 +1,16 @@
 import { projects, retrieveStoredData } from "./quicklist.model.js";
 import { displayProjectDifficulties } from "./quicklist.view.js";
 export function loadPage() {
+    checkIfLoggedIn();
     activateCreateNewProjectForm();
     retrieveStoredData("projects");
     displayProjectDifficulties();
+    logout();
 }
 function activateCreateNewProjectForm() {
-    document.forms.namedItem("create-new-project")?.addEventListener("submit", (e) => {
+    document.forms
+        .namedItem("create-new-project")
+        ?.addEventListener("submit", (e) => {
         const formData = new FormData(e.target);
         const newProject = {
             owner: "Lilach",
@@ -54,4 +58,13 @@ export function checkIfLoggedIn() {
         window.location.href = "login.html";
         throw new Error("User is not logged in.");
     }
+}
+function logout() {
+    document
+        .getElementById("logoutButton")
+        ?.addEventListener("click", function (event) {
+        event.preventDefault();
+        sessionStorage.clear();
+        window.location.href = "login.html";
+    });
 }

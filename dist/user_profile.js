@@ -1,7 +1,9 @@
 const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+checkIfLoggedIn();
 document
     .getElementById("logoutButton")
     ?.addEventListener("click", function (event) {
+    event.preventDefault();
     sessionStorage.clear();
     window.location.href = "login.html";
 });
@@ -55,4 +57,3 @@ function checkIfLoggedIn() {
         throw new Error("User is not logged in.");
     }
 }
-checkIfLoggedIn();
