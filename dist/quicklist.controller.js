@@ -21,6 +21,7 @@ function activateCreateNewProjectForm() {
             budget: parseNumber(formData.get("projectBudget"), "Project budget"),
             id: crypto.randomUUID(),
             status: "Open",
+            details: parseDetails(formData.get("projectDetails"), "Details"),
         };
         projects.push(newProject);
         localStorage.setItem("projects", JSON.stringify(projects));
@@ -55,6 +56,14 @@ function parseDate(input, key) {
     }
     return input;
 }
+function parseDetails(input, key) {
+    if (!input) {
+        return "";
+    }
+    else {
+        return input;
+    }
+}
 export function checkIfLoggedIn() {
     const currentUser = sessionStorage.getItem("currentUser");
     if (!currentUser && window.location.pathname !== "/login.html") {
@@ -80,12 +89,18 @@ function toggleConfirmationWindow() {
     }
 }
 function activateConfirmationButtons() {
-    document.getElementById("openAnotherProject")?.addEventListener("click", (e) => {
-        document.querySelector(".createProject__confirmationWindow")?.classList.add("--hidden");
+    document
+        .getElementById("openAnotherProject")
+        ?.addEventListener("click", (e) => {
+        document
+            .querySelector(".createProject__confirmationWindow")
+            ?.classList.add("--hidden");
         location.reload();
     });
     document.getElementById("watchMyProjects")?.addEventListener("click", (e) => {
-        document.querySelector(".createProject__confirmationWindow")?.classList.add("--hidden");
+        document
+            .querySelector(".createProject__confirmationWindow")
+            ?.classList.add("--hidden");
         location.href = "dashboard.html";
     });
 }

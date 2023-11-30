@@ -30,6 +30,7 @@ function activateCreateNewProjectForm() {
         budget: parseNumber(formData.get("projectBudget"), "Project budget"),
         id: crypto.randomUUID(),
         status: "Open",
+        details: parseDetails(formData.get("projectDetails"), "Details"),
       }
 
       projects.push(newProject)
@@ -73,6 +74,14 @@ function parseDate(input: any, key: string) {
   return input
 }
 
+function parseDetails(input: any, key: string): string {
+  if (!input) {
+    return ""
+  } else {
+    return input
+  }
+}
+
 export function checkIfLoggedIn() {
   const currentUser = sessionStorage.getItem("currentUser")
 
@@ -94,25 +103,30 @@ function logout() {
 function toggleConfirmationWindow() {
   const confirmationWindow = document.querySelector(
     ".createProject__confirmationWindow",
-    ) as HTMLElement
-    if (confirmationWindow) {
-      confirmationWindow.classList.toggle("--hidden")
-    }
+  ) as HTMLElement
+  if (confirmationWindow) {
+    confirmationWindow.classList.toggle("--hidden")
+  }
 
-
-    if (!confirmationWindow.classList.contains("--hidden")) {
-      activateConfirmationButtons();
-    }
+  if (!confirmationWindow.classList.contains("--hidden")) {
+    activateConfirmationButtons()
+  }
 }
 
 function activateConfirmationButtons() {
-  document.getElementById("openAnotherProject")?.addEventListener("click", (e) => {
-      document.querySelector(".createProject__confirmationWindow")?.classList.add("--hidden")
+  document
+    .getElementById("openAnotherProject")
+    ?.addEventListener("click", (e) => {
+      document
+        .querySelector(".createProject__confirmationWindow")
+        ?.classList.add("--hidden")
       location.reload()
     })
-    
-    document.getElementById("watchMyProjects")?.addEventListener("click", (e) => {
-      document.querySelector(".createProject__confirmationWindow")?.classList.add("--hidden")
-      location.href = "dashboard.html"
-    })
+
+  document.getElementById("watchMyProjects")?.addEventListener("click", (e) => {
+    document
+      .querySelector(".createProject__confirmationWindow")
+      ?.classList.add("--hidden")
+    location.href = "dashboard.html"
+  })
 }
