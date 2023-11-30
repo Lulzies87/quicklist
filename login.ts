@@ -2,6 +2,7 @@ type UserData = {
   fullname: string
   username: string
   password: string
+  confirmPassword: string
   email: string
   level: number
   xp: number
@@ -26,8 +27,9 @@ loginForm?.addEventListener("submit", function (e) {
 
   const formData = new FormData(e.target as HTMLFormElement)
 
-  const username = getString(formData, "login-username")
-  const password = getString(formData, "login-password")
+  const username = getString(formData, "login-username");
+  const password = getString(formData, "login-password");
+
 
   if (username && password) {
     try {
@@ -44,11 +46,17 @@ const addUserForm = document.querySelector(
 addUserForm?.addEventListener("submit", function (e) {
   e.preventDefault()
 
-  const formData = new FormData(e.target as HTMLFormElement)
-  const username = getRequiredString(formData, "username")
-  const email = getRequiredString(formData, "email")
+  const formData = new FormData(e.target as HTMLFormElement);
+  const username = getRequiredString(formData, "username");
+  const email = getRequiredString(formData, "email");
+  const Password = getRequiredString(formData, "password");
+  const confirmPassword = getRequiredString(formData, "confirmPassword");
 
-  if (users.some((user) => user.username === username)) {
+  if(Password !== confirmPassword){
+   
+    document.getElementById("messege")!.innerHTML = "Confirm Password and password do not match ";
+  }
+  else if (users.some((user) => user.username === username)) {
     throw new Error(`Username ${username} already taken`)
   } else if (users.some((user) => user.email === email)) {
     throw new Error(`email ${email} already taken`)
@@ -57,6 +65,7 @@ addUserForm?.addEventListener("submit", function (e) {
       fullname: getRequiredString(formData, "fullname"),
       username: getRequiredString(formData, "username"),
       password: getRequiredString(formData, "password"),
+      confirmPassword: getRequiredString(formData, "confirmPassword"),
       email: getRequiredString(formData, "email"),
       level: 1,
       xp: 0,
@@ -65,9 +74,9 @@ addUserForm?.addEventListener("submit", function (e) {
       myProjects: [],
     })
 
-    window.localStorage.setItem("users", JSON.stringify(users))
-    sessionStorage.setItem("user", username)
-    window.location.href = "index.html"
+    window.localStorage.setItem("users", JSON.stringify(users));
+    sessionStorage.setItem("user", username);
+    window.location.href = "login.html";
   }
 })
 

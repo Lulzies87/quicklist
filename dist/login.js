@@ -24,7 +24,12 @@ addUserForm?.addEventListener("submit", function (e) {
     const formData = new FormData(e.target);
     const username = getRequiredString(formData, "username");
     const email = getRequiredString(formData, "email");
-    if (users.some((user) => user.username === username)) {
+    const Password = getRequiredString(formData, "password");
+    const confirmPassword = getRequiredString(formData, "confirmPassword");
+    if (Password !== confirmPassword) {
+        document.getElementById("messege").innerHTML = "Confirm Password and password do not match ";
+    }
+    else if (users.some((user) => user.username === username)) {
         throw new Error(`Username ${username} already taken`);
     }
     else if (users.some((user) => user.email === email)) {
@@ -35,6 +40,7 @@ addUserForm?.addEventListener("submit", function (e) {
             fullname: getRequiredString(formData, "fullname"),
             username: getRequiredString(formData, "username"),
             password: getRequiredString(formData, "password"),
+            confirmPassword: getRequiredString(formData, "confirmPassword"),
             email: getRequiredString(formData, "email"),
             level: 1,
             xp: 0,
@@ -44,7 +50,7 @@ addUserForm?.addEventListener("submit", function (e) {
         });
         window.localStorage.setItem("users", JSON.stringify(users));
         sessionStorage.setItem("user", username);
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }
 });
 function getString(formData, key) {
