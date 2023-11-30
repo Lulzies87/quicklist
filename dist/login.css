@@ -55,7 +55,10 @@
 }
 .signup__form__link__anchor,
 .login__form__link__anchor {
-  color: #ffffff;
+  background-image: linear-gradient(to right, #333399, #aa00cc);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
   text-decoration: none;
   font-weight: normal;
 }

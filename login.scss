@@ -6,79 +6,82 @@ $accent: #992b00;
 
 .signup,
 .login {
-    color: $text;
-    border: 2px solid $text;
-    border-radius: 10px;
-    padding: 2rem;
-    width: min(70ch, 90vw);
-    margin: 1rem;
+  color: $text;
+  border: 2px solid $text;
+  border-radius: 10px;
+  padding: 2rem;
+  width: min(70ch, 90vw);
+  margin: 1rem;
+  margin-inline: auto;
+  text-align: center;
+
+  &__header {
+    margin-bottom: 1rem;
+  }
+
+  &__form {
     margin-inline: auto;
-    text-align: center;
 
-    &__header {
-        margin-bottom: 1rem;
+    &__input {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      width: 90%;
+      margin-inline: auto;
+      text-align: left;
     }
 
-    &__form {
-        margin-inline: auto;
+    &__button {
+      margin-top: 1rem;
+      background-color: $background;
+      color: $secondary;
+      border: 2px solid $secondary;
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
 
-        &__input {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1rem;
-            width: 90%;
-            margin-inline: auto;
-            text-align: left;
-        }
+      &:hover {
+        background-color: $secondary;
+        border-color: $text;
+        color: $text;
+      }
 
-        &__button {
-            margin-top: 1rem;
-            background-color: $background;
-            color: $secondary;
-            border: 2px solid $secondary;
-            border-radius: 10px;
-            padding: 0.5rem 1rem;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-
-            &:hover {
-                background-color: $secondary;
-                border-color: $text;
-                color: $text;
-            }
-
-            &:active {
-                background-color: $primary;
-                border-color: $text;
-            }
-        }
-
-        &__link {
-            margin-top: 2rem;
-
-            &__anchor {
-                color: $text;
-                text-decoration: none;
-                font-weight: normal;
-            }
-        }
+      &:active {
+        background-color: $primary;
+        border-color: $text;
+      }
     }
-}
 
-.colorStyling {
-    border-radius: 10px;
-    padding: 0 0.5rem;
+    &__link {
+      margin-top: 2rem;
 
-    &.gradient {
-        display: inline-block;
-        background-image: linear-gradient(to right, $primary, $accent);
+      &__anchor {
+        background-image: linear-gradient(to right, #333399, #aa00cc);
         color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
+        text-decoration: none;
+        font-weight: normal;
+      }
     }
+  }
+}
 
-    &.orange {
-        background-color: $secondary;
-    }
+.colorStyling {
+  border-radius: 10px;
+  padding: 0 0.5rem;
+
+  &.gradient {
+    display: inline-block;
+    background-image: linear-gradient(to right, $primary, $accent);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  &.orange {
+    background-color: $secondary;
+  }
 }
