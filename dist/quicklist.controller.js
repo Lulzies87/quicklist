@@ -11,18 +11,22 @@ function activateCreateNewProjectForm() {
     document.forms
         .namedItem("create-new-project")
         ?.addEventListener("submit", (e) => {
+        e.preventDefault();
         const formData = new FormData(e.target);
+        const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
         const newProject = {
-            owner: "Lilach",
+            owner: getUsername(currentUser),
             title: parseInput(formData.get("projectTitle"), "Project title"),
             deadline: parseDate(formData.get("projectDeadline"), "Project deadline"),
             difficulty: parseInput(formData.get("projectDifficulty"), "Project difficulty"),
             budget: parseNumber(formData.get("projectBudget"), "Project budget"),
             id: crypto.randomUUID(),
-            status: "Open"
+            status: "Open",
+            details: parseDetails(formData.get("projectDetails"), "Details"),
         };
         projects.push(newProject);
         localStorage.setItem("projects", JSON.stringify(projects));
+        toggleConfirmationWindow();
     });
 }
 function parseInput(input, key) {
@@ -53,6 +57,14 @@ function parseDate(input, key) {
     }
     return input;
 }
+function parseDetails(input, key) {
+    if (!input) {
+        return "";
+    }
+    else {
+        return input;
+    }
+}
 export function checkIfLoggedIn() {
     const currentUser = sessionStorage.getItem("currentUser");
     if (!currentUser && window.location.pathname !== "/login.html") {
@@ -64,8 +76,38 @@ function logout() {
     document
         .getElementById("logoutButton")
         ?.addEventListener("click", function (event) {
-        event.preventDefault();
         sessionStorage.clear();
         window.location.href = "login.html";
     });
+}
+function toggleConfirmationWindow() {
+    const confirmationWindow = document.querySelector(".createProject__confirmationWindow");
+    if (confirmationWindow) {
+        confirmationWindow.classList.toggle("--hidden");
+    }
+    if (!confirmationWindow.classList.contains("--hidden")) {
+        activateConfirmationButtons();
+    }
+}
+function activateConfirmationButtons() {
+    document
+        .getElementById("openAnotherProject")
+        ?.addEventListener("click", (e) => {
+        document
+            .querySelector(".createProject__confirmationWindow")
+            ?.classList.add("--hidden");
+        location.reload();
+    });
+    document.getElementById("watchMyProjects")?.addEventListener("click", (e) => {
+        document
+            .querySelector(".createProject__confirmationWindow")
+            ?.classList.add("--hidden");
+        location.href = "dashboard.html";
+    });
+}
+function getUsername(user) {
+    if (!user) {
+        throw new Error(`User doesn't exist`);
+    }
+    return user.username;
 }

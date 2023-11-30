@@ -13,10 +13,13 @@ function activateCreateNewProjectForm() {
   document.forms
     .namedItem("create-new-project")
     ?.addEventListener("submit", (e) => {
+      e.preventDefault()
       const formData = new FormData(e.target as HTMLFormElement)
 
+      const currentUser = JSON.parse(sessionStorage.getItem("currentUser")!);
+
       const newProject: Project = {
-        owner: "Lilach",
+        owner: getUsername(currentUser),
         title: parseInput(formData.get("projectTitle"), "Project title"),
         deadline: parseDate(
           formData.get("projectDeadline"),
@@ -28,11 +31,13 @@ function activateCreateNewProjectForm() {
         ),
         budget: parseNumber(formData.get("projectBudget"), "Project budget"),
         id: crypto.randomUUID(),
-        status: "Open"
+        status: "Open",
+        details: parseDetails(formData.get("projectDetails"), "Details"),
       }
 
       projects.push(newProject)
       localStorage.setItem("projects", JSON.stringify(projects))
+      toggleConfirmationWindow()
     })
 }
 
@@ -71,6 +76,14 @@ function parseDate(input: any, key: string) {
   return input
 }
 
+function parseDetails(input: any, key: string): string {
+  if (!input) {
+    return ""
+  } else {
+    return input
+  }
+}
+
 export function checkIfLoggedIn() {
   const currentUser = sessionStorage.getItem("currentUser")
 
@@ -84,8 +97,47 @@ function logout() {
   document
     .getElementById("logoutButton")
     ?.addEventListener("click", function (event) {
-      event.preventDefault()
       sessionStorage.clear()
       window.location.href = "login.html"
     })
+}
+
+function toggleConfirmationWindow() {
+  const confirmationWindow = document.querySelector(
+    ".createProject__confirmationWindow",
+  ) as HTMLElement
+  if (confirmationWindow) {
+    confirmationWindow.classList.toggle("--hidden")
+  }
+
+  if (!confirmationWindow.classList.contains("--hidden")) {
+    activateConfirmationButtons()
+  }
+}
+
+function activateConfirmationButtons() {
+  document
+    .getElementById("openAnotherProject")
+    ?.addEventListener("click", (e) => {
+      document
+        .querySelector(".createProject__confirmationWindow")
+        ?.classList.add("--hidden")
+      location.reload()
+    })
+
+  document.getElementById("watchMyProjects")?.addEventListener("click", (e) => {
+    document
+      .querySelector(".createProject__confirmationWindow")
+      ?.classList.add("--hidden")
+    location.href = "dashboard.html"
+  })
+}
+
+function getUsername(user: UserData) {
+
+  if(!user) {
+    throw new Error(`User doesn't exist`);
+  }
+
+  return user.username;
 }
