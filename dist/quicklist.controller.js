@@ -15,6 +15,7 @@ function activateCreateNewProjectForm() {
             difficulty: parseInput(formData.get("projectDifficulty"), "Project difficulty"),
             budget: parseNumber(formData.get("projectBudget"), "Project budget"),
             id: crypto.randomUUID(),
+            status: "Open"
         };
         projects.push(newProject);
         localStorage.setItem("projects", JSON.stringify(projects));
