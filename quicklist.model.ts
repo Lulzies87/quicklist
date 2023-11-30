@@ -1,6 +1,8 @@
 export const difficulties = ["Easy", "Medium", "Hard", "Expert"] as const;
+const status = ["Open", "In Progress", "Done"] as const;
 
 type Difficulty = (typeof difficulties)[number];
+type Status = (typeof status)[number];
 
 export type Project = {
   owner: string
@@ -9,6 +11,7 @@ export type Project = {
   difficulty: Difficulty
   budget: number
   id: string
+  status: Status
 }
 
 type Projects = Project[];
