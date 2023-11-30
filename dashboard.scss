@@ -54,7 +54,7 @@ $accent: #992b00;
         padding-inline-start: 1vw;
 
         &>:nth-child(1) {
-            margin-top: 1.5rem;
+            margin-top: calc(12px + 1vw);
 
             .__project-title,
             .__project-owner,
@@ -62,8 +62,9 @@ $accent: #992b00;
                 &::before {
                     position: absolute;
                     color: $secondary;
-                    font-size: clamp(7px, 1.5vw, 1rem);
-                    transform: translate(0, -90%);
+                    margin-top: 1vw;
+                    font-size: clamp(1rem, 2vw, 2rem);
+                    transform: translate(0, -110%);
                 }
             }
 
