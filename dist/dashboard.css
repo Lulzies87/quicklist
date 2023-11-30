@@ -50,7 +50,7 @@
 .your-projects__container__list > :nth-child(1),
 .available-projects__container__list > :nth-child(1),
 .working-on__container__list > :nth-child(1) {
-  margin-top: 1.5rem;
+  margin-top: calc(12px + 1vw);
 }
 .your-projects__container__list > :nth-child(1) .__project-title::before,
 .your-projects__container__list > :nth-child(1) .__project-owner::before,
@@ -63,8 +63,9 @@
 .working-on__container__list > :nth-child(1) .__project-deadline::before {
   position: absolute;
   color: #ff8800;
-  font-size: clamp(7px, 1.5vw, 1rem);
-  transform: translate(0, -90%);
+  margin-top: 1vw;
+  font-size: clamp(1rem, 2vw, 2rem);
+  transform: translate(0, -110%);
 }
 .your-projects__container__list > :nth-child(1) .__project-title::before,
 .available-projects__container__list > :nth-child(1) .__project-title::before,
