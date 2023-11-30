@@ -24,6 +24,9 @@
   font-weight: normal;
   color: #ffffff;
 }
+.projectDetails #projectInfoDetails {
+  word-wrap: break-word;
+}
 .projectDetails__buttons {
   display: flex;
   justify-content: space-around;

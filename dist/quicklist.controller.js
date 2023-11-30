@@ -13,8 +13,9 @@ function activateCreateNewProjectForm() {
         ?.addEventListener("submit", (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
+        const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
         const newProject = {
-            owner: "Lilach",
+            owner: getUsername(currentUser),
             title: parseInput(formData.get("projectTitle"), "Project title"),
             deadline: parseDate(formData.get("projectDeadline"), "Project deadline"),
             difficulty: parseInput(formData.get("projectDifficulty"), "Project difficulty"),
@@ -103,4 +104,10 @@ function activateConfirmationButtons() {
             ?.classList.add("--hidden");
         location.href = "dashboard.html";
     });
+}
+function getUsername(user) {
+    if (!user) {
+        throw new Error(`User doesn't exist`);
+    }
+    return user.username;
 }
