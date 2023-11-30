@@ -18,14 +18,15 @@
     </a>
     <details class="user-menu">
       <summary class="user-menu__summary">
-        <img src="https://i.pravatar.cc/" alt="avatar picture" class="user-menu__picture" />
+        <img id=userMenuAvatar src="assets/avatar-1.png" alt="avatar picture" class="user-menu__picture" />
       </summary>
       <ul class="user-menu__pop-up-list">
-        <li class="user-menu__pop-up-list__item"><a href="user_profile.html">Fasko</a></li>
-        <li class="user-menu__pop-up-list__item">lvl 7</li>
-        <li class="user-menu__pop-up-list__item">XP 550 / 1500</li>
-        <li class="user-menu__pop-up-list__item"><button id="logoutButton"
-            class="__button --active-accent-color">Logout</button></li>
+        <li class="user-menu__pop-up-list__item"><a id="user-menu-name" href="user_profile.html">Fasko</a></li>
+        <li id="user-menu-lvl" class="user-menu__pop-up-list__item">lvl 7</li>
+        <li id="user-menu-xp" class="user-menu__pop-up-list__item">XP 550 / 1500</li>
+        <li class="user-menu__pop-up-list__item">
+          <button id="logoutButton" class="__button --active-accent-color">Logout</button>
+        </li>
       </ul>
     </details>
   </header>
