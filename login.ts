@@ -108,5 +108,5 @@ function login(username: string, password: string) {
   }
 
   sessionStorage.setItem("user", user.username)
-  window.location.href = "index.html"
+  window.location.href = "dashboard.html"
 }

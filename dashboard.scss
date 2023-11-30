@@ -37,12 +37,59 @@ $accent: #992b00;
     border-radius: 8px;
     height: 20vh;
     overflow-y: auto;
+
+    &__list {
+
+
+        &>:nth-child(1) {
+            margin-top: 1.5rem;
+
+            .__project-title, 
+            .__project-owner, 
+            .__project-deadline {
+                &::before {
+                    position: absolute;
+                    color: $secondary;
+                    font-size: clamp(7px, 1.5vw, 1rem);
+                    transform: translate(0, -90%);
+                }
+            } 
+
+            .__project-title {
+                &::before {
+                    content: "Project title";
+                }
+            }
+
+            .__project-owner {
+                &::before {
+                    content: "by";
+                }
+            }
+
+            .__project-deadline {
+                &::before {
+                    content: "deadline";
+                }
+            }
+        }
+
+        &>:nth-child(even) {
+            color: $primary;
+        }
+
+        &-item {
+            display: grid;
+            grid-template-columns: 3fr 2fr 2fr;
+        }
+    }
 }
 
-.your-projects__container__list-item,
-.available-projects__container__list-item,
-.working-on__container__list-item {
-    display: grid;
-    grid-template-columns: 3fr 2fr 2fr; 
-   
+.__project-title,
+.__project-owner,
+.__project-deadline {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
 }

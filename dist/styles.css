@@ -51,6 +51,7 @@
   right: 1vw;
   top: calc(100% + 0.5rem);
   width: calc(100px + 10vw);
+  z-index: 1;
 }
 .user-menu__pop-up-list__item {
   list-style: none;
